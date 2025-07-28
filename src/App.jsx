@@ -6,6 +6,9 @@ import Navbar from './Components/Navbar'
 import HeroSection from './Components/HeroSection'
 import IntroSection from './Components/IntroSection'
 import Institute from './Components/Institute'
+import Features from './Components/Features'
+import Services from './Components/Services'
+import Faq from './Components/Faq'
 function App() {
   const [count, setCount] = useState(0)
 
@@ -16,6 +19,9 @@ function App() {
       <HeroSection/>
       <IntroSection/>
       <Institute/>
+      <Features/>
+      <Services/>
+      <Faq/>
       </div>
      
      
