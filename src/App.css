@@ -1,0 +1,158 @@
+
+*{
+  /* background-color: bisque; */
+}
+#root {
+width: 100%;
+
+ 
+  text-align: center;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.8);
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+  color: black;
+}
+
+
+.contact-button  {
+  /* background-color: black; */
+  color: white;
+  border-radius: 50%;
+  padding: 10px 20px;
+  border-radius: 2rem;
+  border: none;
+}
+
+
+.hamburger {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 0.5rem;
+  background-color: #057C8B;
+  color: white;
+  border-radius: 50%;
+}
+
+/* Nav menu for large screens */
+.nav-menu {
+  margin-top: 1rem;
+  width:100%;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  font-weight: 600;
+  color: black;
+}
+
+/* Right section for layout purposes */
+.right-section {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.contact-button{
+  display:"flex-end"
+}
+
+@media (max-width: 768px) {
+  .nav-menu {
+    display: none;
+    
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background-color: white;
+    border-radius: 8px;
+    /* box-shadow: 0 0 10px rgba(0,0,0,0.2); */
+    padding: 0.2rem;
+    z-index: 999;
+  }
+
+  .nav-menu.open {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+ 
+  .navbar {
+    flex-wrap: wrap;
+  }
+
+  .logo,
+  .contact-button,
+  .hamburger {
+    margin-bottom: 0.5rem;
+  }
+
+  .logo {
+    order: 1;
+  }
+
+  .contact-button {
+    order: 2;
+  }
+
+  .hamburger {
+    order: 3;
+  }
+
+  .right-section {
+    order: 3;
+  }
+}
+
+
+
+
+
+
+.secondhalf {
+  position: relative;
+  /* width: 40%; */
+
+ 
+}
+
+.backimg {
+  width: 450px;
+   border: 0.2rem white solid;
+  border-radius: 2rem;
+  transform: rotate(-5deg); 
+  position: relative;
+  z-index: 1;
+}
+
+.frontimg {
+  position: absolute;
+  height:480px;
+  top: 20px;  
+  left: 60px; 
+  right:10px; 
+  width: 450px;
+  border: 0.5rem white solid;
+  border-radius: 2rem;
+  z-index: 2;
+}
+
+
