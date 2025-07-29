@@ -25,7 +25,7 @@ function App() {
      <Services/> 
       <Faq/>
       <HeroCard/>
-      <Footer/> */} 
+      <Footer/> 
       </div>
      
      

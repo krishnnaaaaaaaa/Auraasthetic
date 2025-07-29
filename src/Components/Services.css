@@ -1,0 +1,21 @@
+.services-container {
+  padding: 0 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.services-heading {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+  .services-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 0 1rem;
+  }
+}
