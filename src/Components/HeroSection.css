@@ -87,61 +87,89 @@
 
 
 @media (max-width: 768px) {
-  .hero-container {
-    flex-direction: column;
-    padding: 0.3rem;
-    /* margin-top: 25rem; */
-    align-items: center;
-  }
-
-  .hero-heading {
-    font-size: 38px;
-    font-weight: 700;
-    padding:2rem;
-    display:"block"
  
-  }
-
-  .hero-subtext {
-    max-width: 80%;
-    margin: 1rem 0;
-    padding: 0.8rem;
-    text-align: center;
-  }
-
-  .experience-wrapper {
-    flex-direction: row;
-    align-items: center;
-  }
-  .exp-number{
-    margin: 0rem 0rem;
-    font-size: 40px;
-    font-weight: 800;
-  }
-             
-  .exp-label{
-    margin:"0 1rem"
-  }
-
-  .secondhalf {
-    margin-top: 2rem;
-    /* padding: 0.5rem; */
-  }
-.backimg{
-  width: 320px;
+  .hero-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6rem 1rem 1rem; /* top padding to avoid navbar overlap */
+  width: 100%;
+  box-sizing: border-box;
+  background: #f9f9f9;
 }
-.frontimg{
-  width: 390px;
+
+.firsthalf {
+  flex: 1 1 50%;
+  padding: 1rem;
 }
-  .frontimg,
-  .backimg {
-    max-width: 90%;
-  }
-  .secondhalf{
-       flex-direction: column;
-    padding: 1rem;
-    width:356px;
-    gap: 1rem;
-    margin-bottom: 4rem;
-  }
+
+.text-wrapper {
+  max-width: 600px;
+}
+
+.hero-heading {
+  font-size: 2rem;
+  font-weight: bold;
+  max-width:fit-content;
+  margin-bottom: 1rem;
+}
+
+.hero-subtext {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.experience-wrapper {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.exp-box {
+  text-align: center;
+}
+
+.exp-number {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #444;
+}
+
+.exp-label {
+  font-size: 0.9rem;
+  color: #777;
+}
+
+.secondhalf {
+  flex: 1 1 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.frontimg {
+  width: 240px;
+  /* max-width: 300px; */
+  position: absolute;
+  right:40px;
+  z-index: 2;
+  border-radius: 10px;
+}
+
+.backimg {
+  width: 270px;
+
+  position: absolute;
+  left: 10px;
+  top: 20px;
+  z-index: 1;
+  border-radius: 10px;
+  opacity: 0.8;
+}
+
+
+
+
 }

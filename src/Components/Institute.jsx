@@ -7,7 +7,7 @@ function Institute() {
     <div className="institute-container">
     
      <div className='institute-text'>
-<h1 style={{backgroundColor:"#057C8B",borderRadius:"3rem",color:"white",padding:"1rem 2rem"}}>
+<h1 style={{backgroundColor:"#233123",borderRadius:"3rem",color:"white",padding:"1rem 2rem",width:"85%"}}>
     Aura Cosmetology Training Institute
 
 </h1>

@@ -1,5 +1,5 @@
 .intro-container {
-  background-color: #057C8B;
+
   display: flex;
  
   margin: 2rem 0;
@@ -31,8 +31,8 @@
 }
 
 .intro-title-box {
-  background-color: white;
-  color: #057C8B;
+  background-color: #233123;
+  color: white;
   border-radius: 4rem;
   padding: 1rem 2rem;
   text-align: center;
@@ -55,7 +55,7 @@
 /* Responsive for smaller screens */
 @media (max-width: 768px) {
   .intro-container {
-    width:400px;
+    width:380px;
    height: 480px;
     flex-direction: column;
     padding: 1rem;

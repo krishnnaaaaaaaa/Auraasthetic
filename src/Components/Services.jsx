@@ -48,7 +48,8 @@ function Services() {
         <ServiceCard title="Tesla Therapy" Description="Scalp stimulation for hair strengthening." />
         <ServiceCard title="PRP" Description="Natural hair and skin regeneration." />
         <ServiceCard title="Meso Therapy" Description="Nutrient infusion for skin rejuvenation." />
-        <ServiceCard title="Medicated Facials" Description="Targeted facials with visible results.  (Oxygeneo, Hollywood, Vampire, Hydra included)" />
+        <ServiceCard 
+        title="Medicated Facials" Description="Targeted facials with visible results.  (Oxygeneo, Hollywood, Vampire, Hydra included)" />
         <ServiceCard title="Lipolysis" Description="Fat melting for body contouring." />
       </div>
     </div>

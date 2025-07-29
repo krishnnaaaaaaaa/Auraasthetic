@@ -1,7 +1,7 @@
 
 import React, { useState } from "react";
 
-
+import logo from "../assets/logo.png";
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const toggleMenu = () => setIsOpen(!isOpen);
@@ -17,35 +17,24 @@ function Navbar() {
     
     .navbar {
   display: flex;
-  justify-content: space-evenly; 
-  align-items: center;            
-  padding: 1rem 0.2rem;
+  
+  align-items: center; 
+   align-content: center;         
+  padding: 0.4rem 0.2rem;
   position: fixed;
+  opacity: 1;
   top: 0;
   left: 0;
   right: 0;
   backdrop-filter: blur(10px);
-  background-color: rgba(255, 255, 255, 0.8);
+
   z-index: 1000;
   gap: 2rem; 
 }
 
-.logo {
-  font-size: 20px;
-  font-weight: bold;
-  color: black;
-  marginRight: 0rem;
-}
 
 
-.contact-button  {
-  /* background-color: black; */
-  color: white;
-width: 150px; 
-  padding: 10px 20px;
-  border-radius: 2rem;
-  border: none;
-}
+
 
 
 .hamburger {
@@ -53,15 +42,15 @@ width: 150px;
   font-size: 24px;
   cursor: pointer;
   padding: 0.5rem;
-  background-color: #057C8B;
+  background-color: #C8EC75;
   color: white;
   border-radius: 50%;
 }
 
 /* Nav menu for large screens */
 .nav-menu {
-  margin-top: 1rem;
-  // width:100%;
+
+  // width:700px;
   display: flex;
   flex-direction: row;
   gap: 20px;
@@ -76,15 +65,47 @@ width: 150px;
   // gap: 1rem;
 }
 .contact-button{
-  display:"flex-end"
+  display:flex-end;
+margin-left:25rem;
+  background-color: #C2EA66;
+  width: 150px;
+  color: black;
+  border-radius: 2rem;
+  padding: 10px 20px;
+  border: none;
+}
+  .logo {
+margin-right: 15rem; 
+  marginLeft: 4rem;
+  font-size: 3rem;
+  font-weight: bold;
+  color: black;
+  
+}
+
+.logo img{
+height:6rem;
+width:8rem;
+
+
+;
+// object-position: 50% 50%;
+width:90px;}
+
+.contact-div{
+margin-right:auto;
 }
 
 @media (max-width: 768px) {
+.navbar{
+gap:0.2rem;
+flex-wrap:nowrap;
+// justify-content: space-around;
+min-width:310px;}
   .nav-menu {
     display: none;
-    width: 449px;
+    width: 100%;
     flex-direction: column;
-    column-gap: 25px;
     justify-content: center;
     align-items: center;
     position: absolute;
@@ -92,48 +113,42 @@ width: 150px;
     right: 20px;
     background-color: white;
     border-radius: 8px;
-    /* box-shadow: 0 0 10px rgba(0,0,0,0.2); */
-    padding: 0.2rem;
+    padding: 0.5rem;
     z-index: 999;
   }
-
+.logo{
+margin-right: 0rem;}
   .nav-menu.open {
     display: flex;
   }
 
   .hamburger {
     display: block;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 0.5rem;
+    background-color: rgb(200, 236, 117);
+    color: white;
+    order:3;
+    border-radius: 50%;
   }
 
  
-  .navbar {
-    flex-wrap: wrap;
-  }
 
-  .logo,
-  .contact-button,
-  .hamburger {
-    margin-bottom: 0.5rem;
-  }
- 
 
-  .logo {
-    padding:0;
-  }
 
+  .right-section {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+.contact-div{
+margin-right:auto;}
   .contact-button {
-  width:150px; margin-left: 6rem;
-  margin:0 0.5rem;
-    order: 2;
+ 
+    width: 150px;
+    margin: 0;
   }
-
-  .hamburger {
-    order: 3;
-  }
-
-  // /* .right-section {
-  //   order: 3;
-  // } */
 }
 
     
@@ -144,7 +159,8 @@ width: 150px;
 
         
       </div>
-      <div className="logo">Aura</div>
+      <div className="logo">
+        <img src={logo} alt="Logo" /></div>
 
       <div className="right-section">
         <div className="hamburger" onClick={toggleMenu}>
@@ -158,7 +174,7 @@ width: 150px;
           <p className="navpara">Gallery</p>
           <p className="navpara">Testimonial</p>
         </div>
-         <div >
+         <div className="contact-div">
         <button className="contact-button">Contact Us</button>
       </div>
       </div>

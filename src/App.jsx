@@ -19,13 +19,13 @@ function App() {
       <div>
       <Navbar/> 
       <HeroSection/>
-      <IntroSection/> 
-       <Institute/>
-      <Features/>
-     <Services/> 
-      <Faq/>
+     <IntroSection/> 
+        <Institute/>
+     <Features/>
+      <Services/> 
+     {/*  <Faq/>
       <HeroCard/>
-      <Footer/> 
+      <Footer/>  */}
       </div>
      
      
