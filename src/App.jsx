@@ -9,6 +9,8 @@ import Institute from './Components/Institute'
 import Features from './Components/Features'
 import Services from './Components/Services'
 import Faq from './Components/Faq'
+import HeroCard from './Components/HeroCard'
+import Footer from './Components/Footer'
 function App() {
   const [count, setCount] = useState(0)
 
@@ -22,6 +24,8 @@ function App() {
       <Features/>
       <Services/>
       <Faq/>
+      <HeroCard/>
+      <Footer/>
       </div>
      
      
