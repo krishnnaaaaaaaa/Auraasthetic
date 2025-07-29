@@ -6,7 +6,7 @@ function AccessCard() {
       <style>
         {`
           .access-card {
-        width:30%;
+        width:80%;
             height: 700px;
             background-color: #f5f5f5;
             border-radius: 12px;

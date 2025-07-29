@@ -32,7 +32,10 @@ Our state-of-the-art facility features the latest tools and technology, providin
     Contact Us
 </button>
      </div>
-      <img src={img} alt="" className="responsive-image" />
+     <div className='img-div'>
+  <img src={img} alt="" className="institute-image" />
+     </div>
+    
     </div>
   );
 }

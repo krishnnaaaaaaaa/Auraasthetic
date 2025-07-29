@@ -1,7 +1,7 @@
 .intro-container {
   background-color: #057C8B;
   display: flex;
-  flex-wrap: wrap;
+ 
   margin: 2rem 0;
   padding: 2rem 1rem;
   gap: 2rem;
@@ -55,8 +55,11 @@
 /* Responsive for smaller screens */
 @media (max-width: 768px) {
   .intro-container {
+    width:400px;
+   height: 480px;
     flex-direction: column;
     padding: 1rem;
+    margin-top: 18rem;
   }
 
   .intro-title {
