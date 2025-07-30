@@ -1,9 +1,10 @@
+
 import React, { useEffect, useState } from 'react';
 import FeatureCard from './FeatureCard';
 import AccessCard from './AccessCard';
 
 function Features() {
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  const [isMobile, setIsMobile] = useState(typeof window !== 'undefined' ? window.innerWidth <= 768 : false);
 
   useEffect(() => {
     const handleResize = () => {
@@ -15,25 +16,14 @@ function Features() {
   }, []);
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', padding: '1rem' }}>
-      <h1 style={{ textAlign: 'center' }}>What Make Us Different From Others ?</h1>
+    <div className="flex flex-col gap-4 px-4 sm:px-6 md:px-10 py-8">
+      <h1 className="text-center text-xl sm:text-2xl font-semibold mb-4">
+        What Makes Us Different From Others?
+      </h1>
 
-      <div
-        style={{
-          display: 'flex',
-          flexDirection: isMobile ? 'column' : 'row',
-          gap: '2rem',
-        }}
-      >
+      <div className={`flex ${isMobile ? 'flex-col' : 'flex-row'} gap-8`}>
         {/* Feature Cards container */}
-        <div
-          style={{
-            display: 'flex',
-            flexWrap: 'wrap',
-            gap: '2rem',
-            width: isMobile ? '100%' : '70%',
-          }}
-        >
+        <div className={`flex flex-wrap gap-6 ${isMobile ? 'w-full' : 'w-[70%]'}`}>
           <FeatureCard
             Title="Career Counseling"
             Description="Expert counseling to help you choose the right path and grow confidently."
@@ -52,8 +42,8 @@ function Features() {
           />
         </div>
 
-        {/* Access card */}
-        <div style={{ width: isMobile ? '100%' : '30%' }}>
+        {/* Access Card */}
+        <div className={`${isMobile ? 'w-full' : 'w-[30%]'}`}>
           <AccessCard />
         </div>
       </div>

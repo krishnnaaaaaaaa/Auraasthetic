@@ -1,27 +1,25 @@
 
 import React, { useState } from 'react';
+import rightarrow from '../assets/right-arrow.png'; 
+import downarrow from '../assets/down-arrow.png';    
 
 const faqData = [
   {
-    question: "What is FitFlex and how does it work?",
-    answer: "FitFlex is a structured fitness platform offering personalized workout plans. You choose your goal and we guide you daily!"
+    question: "Are all treatments doctor-supervised?",
+    answer: "Yes, every treatment at Aura Aesthetics is conducted under the supervision of qualified doctors to ensure safety and optimal results.",
   },
   {
-    question: "Is FitFlex free to use?",
-    answer: "Yes! FitFlex is completely free for users to follow fitness routines and track their progress."
+    question: "Is there any downtime after cosmetic procedures?",
+    answer: "Most of our treatments are non-surgical and involve minimal to no downtime, so you can return to your routine quickly.",
   },
   {
-    question: "Do I need any equipment to follow the exercises?",
-    answer: "Not necessarily. Most workouts are bodyweight-based. Some advanced plans may include dumbbells or resistance bands."
+    question: "Do you offer personalized treatment plans?",
+    answer: "Absolutely! We customize each treatment based on your skin type, concerns, and goals after a detailed consultation and skin analysis.",
   },
   {
-    question: "Can I use FitFlex on mobile devices?",
-    answer: "Absolutely! FitFlex is mobile-friendly and can be accessed via any browser on your phone or tablet."
+    question: "Who can join the cosmetology courses?",
+    answer: "Our courses are open to beginners and professionals looking to enhance their skills in the field of aesthetics and cosmetology.",
   },
-  {
-    question: "How do I reset my workout progress?",
-    answer: "Go to your profile settings and click 'Reset Progress' to start your fitness journey anew."
-  }
 ];
 
 const FAQ = () => {
@@ -32,90 +30,37 @@ const FAQ = () => {
   };
 
   return (
-    <>
-      <style>{`
-        .faq-container {
-          max-width: 800px;
-          margin: 50px auto;
-          padding: 20px;
-          font-family: Arial, sans-serif;
-      
-        }
+    <div className="max-w-3xl w-[90%] mx-auto py-10 px-4 sm:px-6 font-sans">
+      <h2 className="text-3xl sm:text-4xl font-bold text-center mb-10 text-black">
+        Answers to your questions
+      </h2>
 
-        .faq-title {
-          text-align: center;
-          font-size: 2.5rem;
-          font-weight: 700;
-          margin-bottom: 40px;
-          color: black;
-        }
-
-        .faq-item {
-          border-bottom: 1px solid #ccc;
-          border-radius: 10px;
-          margin-bottom: 15px;
-          overflow: hidden;
-       
-          
-        }
-
-     
-
-        .faq-question {
-       
-          padding: 18px 24px;
-          font-size: 1.3rem;
-          font-weight: 600;
-          color: black;
-          cursor: pointer;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-        }
-
-        .faq-answer {
-          padding: 16px 24px;
-       font-weight: 400;
-          font-size: 1.1rem;
-          color: #555;
-
-           display: flex;
-          justify-content: space-between;
-          align-items: flex-start;
-          animation: fadeIn 0.3s ease-in-out;
-        }
-
-        @keyframes fadeIn {
-          from { opacity: 0; transform: translateY(-5px); }
-          to { opacity: 1; transform: translateY(0); }
-        }
-
-        .plus-minus {
-          font-size: 1.5rem;
-          color: #666;
-        }
-      `}</style>
-
-      <div className="faq-container">
-        <h2 className="faq-title">Frequently Asked Questions</h2>
-        {faqData.map((faq, index) => (
-          <div className="faq-item" key={index}>
-            <div
-              className="faq-question"
-              onClick={() => toggleAnswer(index)}
-            >
-              {faq.question}
-              <span className="plus-minus">{openIndex === index ? '-' : '+'}</span>
-            </div>
-            {openIndex === index && (
-              <div className="faq-answer">{faq.answer}</div>
-            )}
+      {faqData.map((faq, index) => (
+        <div
+          key={index}
+          className="mb-4 border border-gray-300 rounded-xl overflow-hidden"
+        >
+          <div
+            className="cursor-pointer flex justify-between items-center text-black font-semibold text-lg sm:text-xl px-4 py-4"
+            onClick={() => toggleAnswer(index)}
+          >
+            <span>{faq.question}</span>
+            <img
+              src={openIndex === index ? downarrow : rightarrow}
+              alt="arrow"
+              className="w-6 h-6"
+            />
           </div>
-        ))}
-      </div>
-    </>
+
+          {openIndex === index && (
+            <div className="px-4 py-3 text-gray-700 text-base animate-fadeIn">
+              {faq.answer}
+            </div>
+          )}
+        </div>
+      ))}
+    </div>
   );
 };
 
 export default FAQ;
-
