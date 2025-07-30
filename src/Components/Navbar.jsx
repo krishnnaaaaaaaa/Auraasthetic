@@ -27,7 +27,7 @@ const labels=[
 ]
   return (
     <>
-      <nav className="bg-[#FAFFF2] px-10 py-5 flex justify-between items-center">
+      <nav className="bg-[#FAFFF2] px-10 py-5 flex  gap-x-2 lg:justify-between items-center">
         {/* Logo */}
         <div className="font-bold text-2xl">
           <img src={logo} alt="Logo" className="w-20 inline-block mr-2" />
@@ -81,7 +81,8 @@ const labels=[
           <button
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className="md:hidden mt-4 bg-lime-200 px-6 py-2 rounded-full text-black font-semibold flex items-center gap-2 overflow-hidden relative"
+      className="md:hidden mt-4 bg-lime-200 
+       px-6 py-2 rounded-full text-black font-semibold flex items-center gap-2 overflow-hidden relative"
     >
       {/* Left White Arrow on Hover */}
       <span className="relative w-4 h-5 inline-block">
@@ -107,7 +108,7 @@ const labels=[
         animate={{ x: isHovered ? 10 : 0 }}
         transition={{ duration: 0.4 }}
       >
-        Contact us
+        Contact us   
       </motion.span>
 
       {/* Right Arrow */}
