@@ -2,6 +2,7 @@
 import React ,{useEffect,useState} from 'react';
 import mainImage from '../assets/frontimg.jpeg';      // Foreground image
 import backgroundImage from '../assets/backimg.jpg'; // Background tilted image
+import { motion } from "framer-motion";
 
 
 const HeroSection = () => {
@@ -69,21 +70,29 @@ const HeroSection = () => {
 
       {/* Right Image Stack */}
    
-   <div className="relative mt-12 md:mt-0 w-[320px] md:w-[350px] lg:w-[420px] xl:w-[480px] h-[450px]">
-  {/* Background Image (tilted to the left) */}
-  <img
-    src={backgroundImage}
-    alt="Tilted Background"
-    className="absolute top-5 left-5 w-full h-full object-cover rounded-[2rem] shadow-xl rotate-[-6deg] z-0"
-  />
 
-  {/* Foreground Image */}
-  <img
-    src={mainImage}
-    alt="Main Display"
-    className="relative w-full h-full object-cover rounded-[2rem] shadow-2xl z-10"
-  />
-</div>
+
+ <div className="relative mt-12 md:mt-0 w-[320px] md:w-[350px] lg:w-[420px] xl:w-[480px] h-[450px]">
+      {/* Background Image */}
+      <motion.img
+        src={backgroundImage}
+        alt="Tilted Background"
+        initial={{ rotate: 60, opacity: 0 }}
+        animate={{ rotate: -6, opacity: 1 }}
+        transition={{ duration: 0.7, ease: "easeOut" }}
+        className="absolute top-5 left-5 w-full h-full object-cover rounded-[2rem] shadow-xl rotate-[-6deg] z-0"
+      />
+
+      {/* Foreground Image */}
+      <motion.img
+        src={mainImage}
+        alt="Main Display"
+        initial={{  opacity: 0 }}
+        animate={{ rotate: 0, opacity: 1 }}
+        transition={{ delay: 1, duration: 1, ease: "easeOut" }}
+        className="relative w-full h-full object-cover rounded-[2rem] shadow-2xl z-10"
+      />
+    </div>
     </section>
   );
 };
