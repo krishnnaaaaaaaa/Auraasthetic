@@ -1,7 +1,5 @@
 
 import React, { useState } from 'react';
-import rightarrow from '../assets/right-arrow.png'; 
-import downarrow from '../assets/down-arrow.png';    
 
 const faqData = [
   {
@@ -30,35 +28,85 @@ const FAQ = () => {
   };
 
   return (
-    <div className="max-w-3xl w-[90%] mx-auto py-10 px-4 sm:px-6 font-sans">
-      <h2 className="text-3xl sm:text-4xl font-bold text-center mb-10 text-black">
+    <div style={{
+      maxWidth: '800px',
+      margin: '0 auto',
+      padding: '60px 20px',
+      fontFamily: 'Arial, sans-serif'
+    }}>
+      <h2 style={{
+        textAlign: 'center',
+        fontSize: '32px',
+        fontWeight: '700',
+        color: '#111827',
+        marginBottom: '40px'
+      }}>
         Answers to your questions
       </h2>
 
-      {faqData.map((faq, index) => (
-        <div
-          key={index}
-          className="mb-4 border border-gray-300 rounded-xl overflow-hidden"
-        >
-          <div
-            className="cursor-pointer flex justify-between items-center text-black font-semibold text-lg sm:text-xl px-4 py-4"
-            onClick={() => toggleAnswer(index)}
+      <div style={{
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '16px'
+      }}>
+        {faqData.map((faq, index) => (
+          <div 
+            key={index}
+            style={{
+              borderBottom: '1px solid #E5E7EB',
+              paddingBottom: '16px'
+            }}
           >
-            <span>{faq.question}</span>
-            <img
-              src={openIndex === index ? downarrow : rightarrow}
-              alt="arrow"
-              className="w-6 h-6"
-            />
-          </div>
-
-          {openIndex === index && (
-            <div className="px-4 py-3 text-gray-700 text-base animate-fadeIn">
-              {faq.answer}
+            <div
+              onClick={() => toggleAnswer(index)}
+              style={{
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                cursor: 'pointer',
+                padding: '12px 0'
+              }}
+            >
+              <h3 style={{
+                margin: 0,
+                fontSize: '18px',
+                fontWeight: '600',
+                color: '#111827'
+              }}>
+                {faq.question}
+              </h3>
+              <div style={{
+                width: '24px',
+                height: '24px',
+                borderRadius: '50%',
+                backgroundColor: '#C2EA66',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                color: 'white',
+                fontSize: '16px',
+                fontWeight: 'bold',
+                flexShrink: 0,
+                marginLeft: '16px'
+              }}>
+                {openIndex === index ? '−' : '+'}
+              </div>
             </div>
-          )}
-        </div>
-      ))}
+
+            {openIndex === index && (
+              <p style={{
+                margin: '8px 0 0 0',
+                fontSize: '14px',
+                color: '#6B7280',
+                lineHeight: '1.6',
+                paddingRight: '40px'
+              }}>
+                {faq.answer}
+              </p>
+            )}
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
