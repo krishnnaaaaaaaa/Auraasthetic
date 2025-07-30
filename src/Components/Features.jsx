@@ -1,5 +1,4 @@
-
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import FeatureCard from './FeatureCard';
 import AccessCard from './AccessCard';
 
@@ -15,39 +14,54 @@ function Features() {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  return (
-    <div className="flex flex-col gap-4 px-4 sm:px-6 md:px-10 py-8">
-      <h1 className="text-center text-xl sm:text-2xl font-semibold mb-4">
-        What Makes Us Different From Others?
-      </h1>
+  const features = [
+    {
+      title: "Career Counseling",
+      description: "Expert counseling to help you choose the right path and grow confidently."
+    },
+    {
+      title: "Certified Courses",
+      description: "Industry-recognized programs designed for real-world cosmetology careers."
+    },
+    {
+      title: "Expert Mentorship",
+      description: "Learn from experienced, practicing professionals in the aesthetics field"
+    },
+    {
+      title: "Hands-On Studio",
+      description: "Train in a live cosmetology setup with real client practice."
+    }
+  ];
 
-      <div className={`flex ${isMobile ? 'flex-col' : 'flex-row'} gap-8`}>
-        {/* Feature Cards container */}
-        <div className={`flex flex-wrap gap-6 ${isMobile ? 'w-full' : 'w-[70%]'}`}>
-          <FeatureCard
-            Title="Career Counseling"
-            Description="Expert counseling to help you choose the right path and grow confidently."
-          />
-          <FeatureCard
-            Title="Certified Courses"
-            Description="Industry-recognized programs designed for real-world cosmetology careers."
-          />
-          <FeatureCard
-            Title="Expert Mentorship"
-            Description="Learn from experienced, practicing professionals in the aesthetics field"
-          />
-          <FeatureCard
-            Title="Hands-On Studio"
-            Description="Train in a live cosmetology setup with real client practice."
-          />
+  return (
+    <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            What Makes Us Different From Others?
+          </h2>
+          <div className="w-20 h-1 bg-lime-300 mx-auto"></div>
         </div>
 
-        {/* Access Card */}
-        <div className={`${isMobile ? 'w-full' : 'w-[30%]'}`}>
-          <AccessCard />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {/* Feature Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:col-span-2">
+            {features.map((feature, index) => (
+              <FeatureCard 
+                key={index}
+                Title={feature.title}
+                Description={feature.description}
+              />
+            ))}
+          </div>
+
+          {/* Access Card */}
+          <div className="lg:col-span-1">
+            <AccessCard />
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 
