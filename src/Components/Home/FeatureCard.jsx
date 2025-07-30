@@ -1,5 +1,5 @@
 import React from 'react';
-import img from "../assets/download.png";
+import img from "../../assets/download.png";
 
 function FeatureCard({ Title, Description }) {
   return (

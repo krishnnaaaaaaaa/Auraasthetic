@@ -1,7 +1,7 @@
 
 import React ,{useEffect,useState} from 'react';
-import mainImage from '../assets/frontimg.jpeg';      // Foreground image
-import backgroundImage from '../assets/backimg.jpg'; // Background tilted image
+import mainImage from '../../assets/frontimg.jpeg';      // Foreground image
+import backgroundImage from '../../assets/backimg.jpg'; // Background tilted image
 import { motion } from "framer-motion";
 
 
@@ -77,7 +77,7 @@ const HeroSection = () => {
       <motion.img
         src={backgroundImage}
         alt="Tilted Background"
-        initial={{ rotate: 60, opacity: 0 }}
+        initial={{ rotate: 40, opacity: 0 }}
         animate={{ rotate: -6, opacity: 1 }}
         transition={{ duration: 0.7, ease: "easeOut" }}
         className="absolute top-5 left-5 w-full h-full object-cover rounded-[2rem] shadow-xl rotate-[-6deg] z-0"
@@ -89,7 +89,7 @@ const HeroSection = () => {
         alt="Main Display"
         initial={{  opacity: 0 }}
         animate={{ rotate: 0, opacity: 1 }}
-        transition={{ delay: 1, duration: 1, ease: "easeOut" }}
+        transition={{ delay: 1.5, duration: 1, ease: "easeOut" }}
         className="relative w-full h-full object-cover rounded-[2rem] shadow-2xl z-10"
       />
     </div>

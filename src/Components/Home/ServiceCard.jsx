@@ -1,5 +1,5 @@
 import React from 'react'
-import img from "../assets/bellicon.png"
+import img from "../../assets/bellicon.png"
 function ServiceCard({title,Description}) {
   return (
     <div style={{display:"flex",width:"350px",hieght:"260px",display:"flex",flexDirection:"row",

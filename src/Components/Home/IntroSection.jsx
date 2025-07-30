@@ -1,6 +1,6 @@
 
 import React from "react";
-import introImage from "../assets/introsectionimg.jpg"; // replace with your image path
+import introImage from "../../assets/introsectionimg.jpg"; // replace with your image path
 
 const IntroSection = () => {
   return (

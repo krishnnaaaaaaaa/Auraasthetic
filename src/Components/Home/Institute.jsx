@@ -1,6 +1,6 @@
 
 import React from 'react';
-import trainingImage from '../assets/makeupart.jpg';
+import trainingImage from '../../assets/makeupart.jpg'; // Adjust the path as necessary
 
 function Institute() {
   return (
