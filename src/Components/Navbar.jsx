@@ -27,7 +27,9 @@ const labels=[
 ]
   return (
     <>
-      <nav className="bg-[#FAFFF2] px-10 py-5 flex  gap-x-2 lg:justify-between items-center">
+      <nav className=" px-10 py-5
+       flex gap-x-2 lg:justify-between items-center fixed  backdrop-blur-md
+       top-0 left-0 right-0 z-50 ">
         {/* Logo */}
         <div className="font-bold text-2xl">
           <img src={logo} alt="Logo" className="w-20 inline-block mr-2" />
@@ -204,10 +206,12 @@ const labels=[
       </nav>
 
       {/* Mobile Menu List */}
-      {isOpen && (
-        <div className="md:hidden flex flex-col items-center space-y-3 bg-[#FAFFF2] py-4">
-         
-             <ul className="flex gap-4 flex-col gap-y-2">
+     
+     {isOpen && (
+  <div className="md:hidden fixed top-0 left-0 right-0 z-40 
+                  flex flex-col items-center space-y-3 py-4 
+                  bg-white/90 backdrop-blur-md shadow-md">
+    <ul className="flex flex-col gap-y-2 mt-32">
       {labels.map((item, index) => (
         <motion.li
           key={item}
@@ -226,9 +230,9 @@ const labels=[
         </motion.li>
       ))}
     </ul>
-         
-        </div>
-      )}
+  </div>
+)}
+
     </>
   );
 };

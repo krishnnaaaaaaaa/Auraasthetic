@@ -54,7 +54,7 @@ import React from 'react';
 
 const WelcomeCard = () => {
   return (
-    <section className="bg-[#C2EA66] py-10 px-4 md:px-16">
+    <section className="bg-[#C2EA66] py-10 px-4 md:px-16 flex flex-wrap">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
         {/* Images */}
         <div className="relative flex justify-center md:justify-start">
@@ -70,10 +70,10 @@ const WelcomeCard = () => {
  <img
   src="https://framerusercontent.com/images/5WmJdglqGO8oJYIEmg8bi3llSzw.png?scale-down-to=1024"
   alt="Receptionist"
-  className="absolute top-0.5 left-1/2 translate-x-6 translate-y-6 
+  className=" top-0.5 left-1/2 translate-x-6 translate-y-6 
   md:translate-x-10 md:translate-y-12 
   h-[320px]
-  rounded-xl w-40 sm:w-44 md:w-52 lg:w-60 object-cover shadow-lg 
+  rounded-xl w-40 sm:w-32 md:w-52 lg:w-60 object-cover shadow-lg 
   z-20"
 />
         </div>

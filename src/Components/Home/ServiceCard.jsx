@@ -1,9 +1,8 @@
 
 import React from 'react'
 
-function ServiceCard({title,Description}) {
 
-import React from 'react';
+
 
 function ServiceCard({ title, Description }) {
 

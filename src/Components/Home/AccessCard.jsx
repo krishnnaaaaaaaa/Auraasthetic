@@ -8,7 +8,8 @@ import { FiClipboard } from "react-icons/fi"; // import clipboard icon
 
 function AccessCard() {
   return (
-    <div className="w-[85%] h-[700px] rounded-md shadow-md p-5 flex flex-col items-center bg-[#C2EA66] relative group overflow-hidden">
+    <div className="w-[85%] h-[700px] rounded-md 
+    shadow-md p-5 flex flex-col items-center bg-[#C2EA66] relative group overflow-hidden">
 
       {/* Top-right hover div */}
       <div className="absolute top-4 right-4 w-10 h-10 bg-transparent rounded-full flex items-center justify-center transition-all duration-300 ease-in-out group-hover:bg-white">
