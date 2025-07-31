@@ -27,7 +27,7 @@ function FeatureCard({ Title, Description }) {
         
         {/* Arrow icon */}
         <div className="w-6 h-6 rounded-full bg-lime-100 flex items-center justify-center mt-auto">
-          <FiArrowRight className="text-lime-600 w-4 h-4" />
+          {/* <FiArrowRight className="text-lime-600 w-4 h-4" /> */}
         </div>
       </div>
     </div>

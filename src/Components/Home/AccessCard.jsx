@@ -1,36 +1,56 @@
 
-;
-
-
-import React from 'react';
+import React, { useState } from 'react';
 import logo from "../../assets/logo.png";
-import { FiClipboard } from "react-icons/fi"; // import clipboard icon
+import { FaArrowRight } from "react-icons/fa";
+import { FaPaperclip } from "react-icons/fa";
 
 function AccessCard() {
-  return (
-    <div className="w-[85%] h-[700px] rounded-md 
-    shadow-md p-5 flex flex-col items-center bg-[#C2EA66] relative group overflow-hidden">
+  const [isHovered, setIsHovered] = useState(false);
 
-      {/* Top-right hover div */}
-      <div className="absolute top-4 right-4 w-10 h-10 bg-transparent rounded-full flex items-center justify-center transition-all duration-300 ease-in-out group-hover:bg-white">
-        <FiClipboard className="text-transparent group-hover:text-[#233123] text-xl transition-all duration-300 ease-in-out" />
+  return (
+    <div
+      className={`w-full h-[750px] rounded-2xl shadow-md p-6 flex flex-col items-center
+     justify-between bg-[#C2EA66] overflow-hidden transition-all duration-500`}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      {/* Top left icon */}
+      <div className="self-start mb-2 relative">
+        <div
+          className={`p-2 rounded-full transition-all duration-300 flex items-center justify-center
+            ${isHovered ? "bg-white text-black" : " text-black"}`}
+        >
+          {isHovered ? (
+           <FaPaperclip className="text-xl rotate-[180deg]" />
+
+          ) : (
+            <FaArrowRight className="text-xl" />
+          )}
+        </div>
       </div>
 
-      <h1 className="text-2xl font-semibold text-[#333] mb-4">Extended Access</h1>
-
-      <h3 className="text-base text-[#233123] font-normal text-center px-8 py-4">
-        Get 6 months extra studio time - Exclusive to Aura students
-      </h3>
+      {/* Text */}
+      <div className="text-center">
+        <h1 className="text-3xl font-bold text-[#333] mb-3">Extended Access</h1>
+        <h3 className="text-lg text-[#233123] font-medium px-4">
+          Get 6 months extra studio time - Exclusive to Aura students
+        </h3>
+      </div>
 
       {/* Logo */}
-      <img
-        src={logo}
-        alt="Logo"
-        className="mt-8 w-[543px] transition-transform duration-500 ease-in-out group-hover:scale-110"
-      />
+      <div className="flex-1 flex items-center justify-center w-full p-4">
+        <div className="w-full max-w-[600px]">
+          <img
+            src={logo}
+            alt="Logo"
+            className={`w-full h-auto object-contain rounded-xl 
+              transition-transform duration-400 ease-in-out 
+              ${isHovered ? "scale-220" : "scale-100"}`}
+          />
+        </div>
+      </div>
     </div>
   );
 }
 
 export default AccessCard;
-
