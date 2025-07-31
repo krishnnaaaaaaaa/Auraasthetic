@@ -7,8 +7,9 @@ import tiktok from '../assets/tiktok.svg';
 import gmail from "../assets/gmailicon.svg";
 import telephone from "../assets/telephone.png";
 import location from "../assets/location.png";
-
+import { motion } from "framer-motion";
 function Footer() {
+  const icons = [facebook, instagram, twitter, youtube, tiktok];
   return (
     <div className="flex flex-wrap justify-between gap-8 px-8 py-12 bg-white">
       {/* Branding Section */}
@@ -18,14 +19,9 @@ function Footer() {
           Stay up to date on the latest features and releases by joining our socials
         </h3>
         <div className="flex gap-3 mt-4">
-          {[twitter, instagram, facebook, youtube, tiktok].map((icon, idx) => (
-            <div 
-              key={idx} 
-              className="w-8 h-8 flex items-center justify-center rounded-full bg-[#c2ea66] overflow-hidden"
-            >
-              <div className="w-full h-full flex items-center justify-center hover:animate-bounce">
-                <img src={icon} alt="icon" className="w-4" />
-              </div>
+          {icons.map((icon, idx) => (
+            <div key={idx} className="w-8 h-8 flex items-center justify-center rounded-full bg-[#c2ea66]">
+              <img src={icon} alt="icon" className="w-4" />
             </div>
           ))}
         </div>
@@ -42,21 +38,64 @@ function Footer() {
       </div>
 
       {/* Contact Info */}
+     
       <div className="flex flex-col min-w-[200px] gap-4">
-        <h1 className="text-lg font-semibold text-black">Address</h1>
-        <div className="flex items-center text-gray-600 text-sm">
-          <img src={gmail} alt="gmail" className="w-5 mr-2" />
-          testing@gmail.com
+      <h1 className="text-lg font-semibold text-black">Address</h1>
+
+      {/* Gmail Row */}
+      <div className="flex items-center text-gray-600 text-sm">
+        <div className="w-8 h-8 flex items-center justify-center rounded-full bg-[#c2ea66] overflow-hidden mr-2">
+          <motion.img
+            src={gmail}
+            alt="gmail"
+            className="w-4"
+            animate={{ y: 0, opacity: 1 }}
+            whileHover={{
+              y: [0, -15, 15, 0],
+              opacity: [1, 0, 0, 1],
+            }}
+            transition={{ duration: 0.8, ease: "easeInOut" }}
+          />
         </div>
-        <div className="flex items-center text-gray-600 text-sm">
-          <img src={telephone} alt="telephone" className="w-5 mr-2" />
-          +1234567890
-        </div>
-        <div className="flex items-center text-gray-600 text-sm">
-          <img src={location} alt="location" className="w-5 mr-2" />
-          Amsterdam, NL
-        </div>
+        testing@gmail.com
       </div>
+
+      {/* Telephone Row */}
+      <div className="flex items-center text-gray-600 text-sm">
+        <div className="w-8 h-8 flex items-center justify-center rounded-full bg-[#c2ea66] overflow-hidden mr-2">
+          <motion.img
+            src={telephone}
+            alt="telephone"
+            className="w-4"
+            animate={{ y: 0, opacity: 1 }}
+            whileHover={{
+              y: [0, -15, 15, 0],
+              opacity: [1, 0, 0, 1],
+            }}
+            transition={{ duration: 0.8, ease: "easeInOut" }}
+          />
+        </div>
+        +1234567890
+      </div>
+
+      {/* Location Row */}
+      <div className="flex items-center text-gray-600 text-sm">
+        <div className="w-8 h-8 flex items-center justify-center rounded-full bg-[#c2ea66] overflow-hidden mr-2">
+          <motion.img
+            src={location}
+            alt="location"
+            className="w-4"
+            animate={{ y: 0, opacity: 1 }}
+            whileHover={{
+              y: [0, -15, 15, 0],
+              opacity: [1, 0, 0, 1],
+            }}
+            transition={{ duration: 0.8, ease: "easeInOut" }}
+          />
+        </div>
+        Amsterdam, NL
+      </div>
+    </div>
     </div>
   );
 }

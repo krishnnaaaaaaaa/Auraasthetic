@@ -33,7 +33,10 @@ function FeatureCard({ Title, Description }) {
         {/* Description */}
         <p className="text-gray-500 text-sm mb-4">{Description}</p>
         
-
+        {/* Arrow icon */}
+        <div className="w-6 h-6 rounded-full bg-lime-100 flex items-center justify-center mt-auto">
+          {/* <FiArrowRight className="text-lime-600 w-4 h-4" /> */}
+        </div>
       </div>
     </div>
   );
