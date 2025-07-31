@@ -12,11 +12,11 @@ function Home() {
       <div>
     
       <HeroSection/>
-    <IntroSection/> 
-      <Institute/>
-     <Features/>
-          <Services/>  
-     
+  <IntroSection/> 
+       <Institute/>
+       <Features/> 
+          <Services/>   
+    
       </div>
      
      

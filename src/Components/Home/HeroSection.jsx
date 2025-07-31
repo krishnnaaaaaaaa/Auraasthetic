@@ -72,7 +72,8 @@ const HeroSection = () => {
    
 
 
- <div className="relative mt-12 md:mt-0 w-[320px] md:w-[350px] lg:w-[420px] xl:w-[480px] h-[450px]">
+ <div className="relative mt-18
+  md:mt-18 w-[320px] md:w-[350px] lg:w-[420px] xl:w-[480px] h-[450px]">
       {/* Background Image */}
       <motion.img
         src={backgroundImage}
