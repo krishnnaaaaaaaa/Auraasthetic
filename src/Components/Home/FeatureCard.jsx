@@ -1,4 +1,5 @@
 import React from 'react';
+import { FiArrowRight } from 'react-icons/fi';
 import img from "../../assets/download.png";
 
 function FeatureCard({ Title, Description }) {
