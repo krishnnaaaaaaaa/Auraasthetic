@@ -19,8 +19,13 @@ function Footer() {
         </h3>
         <div className="flex gap-3 mt-4">
           {[twitter, instagram, facebook, youtube, tiktok].map((icon, idx) => (
-            <div key={idx} className="w-8 h-8 flex items-center justify-center rounded-full bg-[#c2ea66]">
-              <img src={icon} alt="icon" className="w-4" />
+            <div 
+              key={idx} 
+              className="w-8 h-8 flex items-center justify-center rounded-full bg-[#c2ea66] overflow-hidden"
+            >
+              <div className="w-full h-full flex items-center justify-center hover:animate-bounce">
+                <img src={icon} alt="icon" className="w-4" />
+              </div>
             </div>
           ))}
         </div>
