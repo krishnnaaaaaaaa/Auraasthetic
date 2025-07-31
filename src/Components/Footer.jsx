@@ -18,30 +18,13 @@ function Footer() {
         <h3 className="text-gray-600 font-medium text-base max-w-md">
           Stay up to date on the latest features and releases by joining our socials
         </h3>
-     
-       <div className="flex gap-3 mt-4">
-  
-    
-      
-        {icons.map((icon, idx) => (
-        <div
-          key={idx}
-          className="w-8 h-8 flex items-center justify-center rounded-full bg-[#c2ea66] overflow-hidden"
-        >
-          <motion.img
-            src={icon}
-            alt="icon"
-            className="w-4"
-            animate={{ y: 0, opacity: 1 }} // Default position
-            whileHover={{
-              y: [0, -15, 15, 0],
-              opacity: [1, 0, 0, 1],
-            }}
-            transition={{ duration: 0.8, ease: "easeInOut" }}
-          />
+        <div className="flex gap-3 mt-4">
+          {icons.map((icon, idx) => (
+            <div key={idx} className="w-8 h-8 flex items-center justify-center rounded-full bg-[#c2ea66]">
+              <img src={icon} alt="icon" className="w-4" />
+            </div>
+          ))}
         </div>
-      ))}
-    </div>
       </div>
 
       {/* Page Links */}
