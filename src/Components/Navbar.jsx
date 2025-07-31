@@ -1,7 +1,7 @@
-
 import React, { useState } from 'react';
 import logo from '../assets/logo.png'; // Replace with your logo path
 import { motion, AnimatePresence } from "framer-motion";
+import { Link } from 'react-router-dom';
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [hovering, setHovering] = useState(false);
@@ -73,7 +73,13 @@ const labels=[
           transition={{ duration: 0.9, ease: "easeInOut" }}
           className="cursor-pointer text-black"
         >
-          {item}
+          {item.trim() === 'About' ? (
+            <Link to="/about" className="hover:text-gray-600 transition-colors duration-200">
+              {item}
+            </Link>
+          ) : (
+            item
+          )}
         </motion.li>
       ))}
     </ul>
