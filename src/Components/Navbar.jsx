@@ -177,7 +177,15 @@ const Navbar = () => {
           transition={{ duration: 0.6 }}
           className="cursor-pointer"
         >
-          {item}
+
+            <Link
+            to={`/${item.toLowerCase()}`}
+            className="text-black hover:text-gray-600 transition"
+            onClick={() => setIsOpen(false)} // Close menu on click
+          >
+            {item}
+          </Link>
+         
         </motion.li>
       ))}
     </ul>
