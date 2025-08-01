@@ -8,8 +8,12 @@ const HeroCard = () => {
   const [courseHovered, setCourseHovered] = useState(false);
 
   return (
-    <div className="flex w-full items-center justify-center p-2 px-20 bg-white min-h-screen">
-      <div className="relative w-full bg-[#c2ea66] rounded-3xl px-8 py-20 md:px-16 text-center shadow-lg overflow-hidden">
+   
+    <div className="flex w-full 
+    items-start sm:items-center justify-center px-4 sm:px-6 md:px-20 bg-white 
+    ">
+  <div className="relative w-full sm:max-w-full max-w-[360px] bg-[#c2ea66] rounded-3xl px-4 sm:px-8 md:px-16 py-6 sm:py-20 text-center shadow-lg overflow-hidden">
+
 
         {/* Inner Shadow */}
         <div
@@ -17,7 +21,7 @@ const HeroCard = () => {
           style={{ boxShadow: 'inset 0 0 80px rgba(0,0,0,0.15)' }}
         />
 
-        {/*  Permanent Dotted Background at Bottom Area */}
+        {/* Dotted Background */}
         <div
           className="absolute bottom-0 left-0 w-full"
           style={{
@@ -30,22 +34,32 @@ const HeroCard = () => {
           }}
         />
 
-        {/* Content Above Dots */}
-        <h1 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6 relative z-10">
-          Ready to Transform Your Skin or Career?
-        </h1>
+        {/* Heading */}
+      
+      <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold text-gray-900 mb-4 sm:mb-6 relative z-10 leading-snug">
+  <span className="block sm:inline">Ready to Transform</span>{' '}
 
-        <p className="text-base md:text-lg text-gray-800 max-w-2xl mx-auto mb-10 relative z-10">
+
+  <span className="block sm:inline">Your Skin</span>{' '}
+  <span className="block sm:hidden">or Career?</span>
+  <span className="hidden sm:inline"> or Career?</span>
+</h1>
+
+
+        {/* Paragraph */}
+        <p className="text-sm sm:text-large md:text-lg text-gray-800 max-w-[90%] sm:max-w-xl mx-auto mb-8 sm:mb-10 relative z-10">
           Discover expert care and professional training — all under one roof. Let Aura be your first step toward confidence.
         </p>
 
-        <div className="flex flex-col sm:flex-row justify-center items-center gap-6 relative z-10">
+        {/* Buttons */}
+        <div className="flex
+        flex-row justify-center items-center gap-3 sm:gap-6 relative z-10 w-full">
 
           {/* Contact Button */}
           <button
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
-            className="mt-4 bg-[#233123] px-6 py-2 rounded-full text-[#C2EA66] font-semibold flex items-center gap-0 overflow-hidden relative"
+            className="w-full sm:w-auto bg-[#233123] px-6 py-2 rounded-full text-[#C2EA66] font-semibold flex items-center gap-0 overflow-hidden relative justify-center"
           >
             <motion.span
               className="w-5 h-5 absolute left-4"
@@ -79,15 +93,15 @@ const HeroCard = () => {
             </motion.span>
           </button>
 
-          {/* "Our Courses" Button */}
+          {/* Our Courses */}
           <div
-            className="inline-block"
+            className="inline-block w-full sm:w-auto text-center"
             onMouseEnter={() => setCourseHovered(true)}
             onMouseLeave={() => setCourseHovered(false)}
           >
             <button
               type="button"
-              className="flex items-center gap-1 text-black font-semibold text-base transition-colors"
+              className="flex justify-center items-center gap-1 text-black font-semibold text-sm sm:text-base transition-colors w-full sm:w-auto"
             >
               Our Courses
               <span className="relative w-3 h-4 inline-block">
