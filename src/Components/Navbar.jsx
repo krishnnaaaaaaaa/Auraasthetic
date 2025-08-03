@@ -11,7 +11,7 @@ const Navbar = () => {
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
-  const labels = ["About", "Services", "Courses", "Gallery", "Testimonial"];
+  const labels = ["Home", "About", "Courses", "Gallery", "Testimonial"];
 
   return (
     <>
