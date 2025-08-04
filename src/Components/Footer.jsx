@@ -44,10 +44,9 @@ function Footer() {
         <a href="/testimonial" className="text-sm text-gray-600 hover:text-gray-800 transition-colors duration-200">Testimonial</a>
       </div>
 
-      {/* Contact Info */}
-     
+{/* Contact Info */}
       <div className="flex flex-col min-w-[200px] gap-4">
-      <h1 className="text-lg font-semibold text-black">Address</h1>
+        <h1 className="text-lg font-semibold text-black">Address</h1>
 
       {/* Gmail Row */}
       <div className="flex items-center text-gray-600 text-sm">
