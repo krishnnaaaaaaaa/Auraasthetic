@@ -35,14 +35,14 @@ const WhatsAppFloat = () => {
             setIsHovered(false);
             setShowTooltip(false);
           }}
-          className="relative bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg transition-all duration-300 group"
+          className="relative bg-[#C2EA66] hover:bg-[#a8d147] text-black p-4 rounded-full shadow-lg transition-all duration-300 group"
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
         >
           <FaWhatsapp className="text-2xl" />
           
           {/* Ripple effect */}
-          <div className="absolute inset-0 rounded-full bg-green-400 animate-ping opacity-20"></div>
+          <div className="absolute inset-0 rounded-full bg-[#C2EA66] animate-ping opacity-20"></div>
           
           {/* Tooltip */}
           <AnimatePresence>

@@ -54,13 +54,13 @@ const CustomCursor = () => {
       y: mousePosition.y - 10,
       scale: 1,
       opacity: isVisible ? 1 : 0,
-      backgroundColor: 'rgba(34, 197, 94, 0.2)', // Green background with some transparency
-      borderColor: 'rgba(34, 197, 94, 0.8)', // Brighter green border
+      backgroundColor: 'rgba(194, 234, 102, 0.2)', // #C2EA66 with some transparency
+      borderColor: 'rgba(168, 209, 71, 0.8)', // Darker shade of #C2EA66 for border
     },
     hover: {
       scale: 2,
-      backgroundColor: 'rgba(34, 197, 94, 0.4)', // More opaque green on hover
-      borderColor: 'rgba(34, 197, 94, 1)', // Solid green border on hover
+      backgroundColor: 'rgba(194, 234, 102, 0.4)', // More opaque #C2EA66 on hover
+      borderColor: 'rgba(194, 234, 102, 1)', // Solid #C2EA66 border on hover
       mixBlendMode: 'normal'
     }
   };
@@ -78,7 +78,7 @@ const CustomCursor = () => {
       }}
     >
       <motion.div 
-        className="w-1 h-1 bg-green-500 rounded-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+        className="w-1 h-1 bg-[#C2EA66] rounded-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
         animate={{
           scale: isHovered ? 0.5 : 1,
           opacity: isHovered ? 0 : 1

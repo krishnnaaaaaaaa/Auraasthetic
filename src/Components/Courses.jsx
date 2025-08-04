@@ -104,8 +104,8 @@ const Courses = () => {
               onClick={() => toggleBadge(index)}
               className={`${
                 selectedBadges.includes(index) 
-                  ? 'bg-green-800 text-white' 
-                  : 'bg-lime-200 text-gray-800 hover:bg-lime-300'
+                  ? 'bg-[#233123] text-white' 
+                  : 'bg-[#C2EA66] text-gray-800 hover:bg-[#a8d147]'
               } px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-colors duration-200 cursor-pointer flex items-center gap-2`}
             >
               {/* Profile Icon */}

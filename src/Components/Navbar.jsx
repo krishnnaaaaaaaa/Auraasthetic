@@ -116,7 +116,7 @@ const Navbar = () => {
         {/* Mobile Hamburger */}
         <div
           className={`sm:hidden text-xl ml-2 mt-2 cursor-pointer 
-            ${isOpen ? 'text-cyan-800' : 'bg-lime-200 text-black'} 
+            ${isOpen ? 'text-cyan-800' : 'bg-[#C2EA66] text-black'} 
             rounded-full w-10 h-10 flex items-center justify-center`}
           onClick={toggleMenu}
         >
@@ -129,7 +129,7 @@ const Navbar = () => {
             <button
               onMouseEnter={() => setIsHovered(true)}
               onMouseLeave={() => setIsHovered(false)}
-              className="bg-lime-200 px-5 py-2 rounded-full text-black 
+              className="bg-[#C2EA66] px-5 py-2 rounded-full text-black 
               font-semibold flex items-center gap-2 mr-12"
             >
             <span className="relative w-4 h-4 inline-block">

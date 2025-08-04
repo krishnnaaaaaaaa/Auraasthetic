@@ -4,7 +4,7 @@ import whoWeAreImage from '../../assets/young-woman-lying-cosmetologist-s-table-
 
 const IntroSection = () => {
   return (
-    <section className="bg-lime-300 py-8 px-4 sm:px-6">
+    <section className="bg-[#C2EA66] py-8 px-4 sm:px-6">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-6 md:gap-10">
         {/* Image */}
         <div className="w-full md:w-[35%] rounded-2xl overflow-hidden shadow-xl">
