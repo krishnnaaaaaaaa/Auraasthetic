@@ -1,6 +1,6 @@
 
 import React from 'react';
-import trainingImage from "../../assets/makeupart.jpg"; // replace with your image path
+import trainingImage from "../../assets/4.png";
 
 function Institute() {
   return (
@@ -36,8 +36,8 @@ text-center whitespace-normal leading-snug">
         {/* Right Image */}
         <div className="flex-1 w-full max-w-full sm:max-w-[80%] md:max-w-none mx-auto">
           <img
-            src="https://framerusercontent.com/images/2wMJwRa0wsgxPtDpkWXf1OItSM.jpeg"
-            alt="Students practicing makeup techniques at Aura Cosmetology Training Institute"
+            src={trainingImage}
+            alt="Aura Cosmetology Training Institute"
             className="rounded-2xl shadow-lg w-full h-auto object-cover max-h-[400px] sm:max-h-[500px]"
           />
         </div>
