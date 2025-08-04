@@ -1,28 +1,35 @@
 import React from 'react';
 import facebook from '../assets/facebookicon.svg';
 import instagram from '../assets/instaicon.svg';
-import twitter from '../assets/xicon.svg';
-import youtube from '../assets/youtubeicon.svg';
-import tiktok from '../assets/tiktok.svg';
 import gmail from "../assets/gmailicon.svg";
 import telephone from "../assets/telephone.png";
 import location from "../assets/location.png";
+import logo from '../assets/logo.png';
 import { motion } from "framer-motion";
 function Footer() {
-  const icons = [facebook, instagram, twitter, youtube, tiktok];
+  const socialLinks = [
+    { icon: facebook, url: 'https://www.facebook.com/profile.php?id=61550647280588&mibextid=ZbWKwL', alt: 'Facebook' },
+    { icon: instagram, url: 'https://www.instagram.com/aura_edutech_drantapurkar?utm_source=qr&igsh=YzU1NGVlODEzOA==', alt: 'Instagram' }
+  ];
   return (
     <div className="flex flex-wrap justify-between gap-8 px-8 py-12 bg-white">
       {/* Branding Section */}
       <div className="flex flex-col min-w-[200px] gap-2">
-        <h2 className="text-2xl font-bold text-black">AURA</h2>
+        <img src={logo} alt="AURA Logo" className="w-16 h-auto mb-2" />
         <h3 className="text-gray-600 font-medium text-base max-w-md">
           Stay up to date on the latest features and releases by joining our socials
         </h3>
         <div className="flex gap-3 mt-4">
-          {icons.map((icon, idx) => (
-            <div key={idx} className="w-8 h-8 flex items-center justify-center rounded-full bg-[#c2ea66]">
-              <img src={icon} alt="icon" className="w-4" />
-            </div>
+          {socialLinks.map((social, idx) => (
+            <a 
+              key={idx} 
+              href={social.url} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="w-8 h-8 flex items-center justify-center rounded-full bg-[#c2ea66] hover:bg-[#a8d147] transition-colors duration-200"
+            >
+              <img src={social.icon} alt={social.alt} className="w-4" />
+            </a>
           ))}
         </div>
       </div>
@@ -30,11 +37,11 @@ function Footer() {
       {/* Page Links */}
       <div className="flex flex-col min-w-[200px] gap-2">
         <h1 className="text-lg font-semibold text-black">Pages</h1>
-        <div className="text-sm text-gray-600">Home</div>
-        <div className="text-sm text-gray-600">About</div>
-        <div className="text-sm text-gray-600">Contact</div>
-        <div className="text-sm text-gray-600">FAQs</div>
-        <div className="text-sm text-gray-600">Error 404</div>
+        <a href="/" className="text-sm text-gray-600 hover:text-gray-800 transition-colors duration-200">Home</a>
+        <a href="/about" className="text-sm text-gray-600 hover:text-gray-800 transition-colors duration-200">About</a>
+        <a href="/contact" className="text-sm text-gray-600 hover:text-gray-800 transition-colors duration-200">Contact</a>
+        <a href="/courses" className="text-sm text-gray-600 hover:text-gray-800 transition-colors duration-200">Our Courses</a>
+        <a href="/testimonial" className="text-sm text-gray-600 hover:text-gray-800 transition-colors duration-200">Testimonial</a>
       </div>
 
       {/* Contact Info */}
@@ -57,7 +64,7 @@ function Footer() {
             transition={{ duration: 0.8, ease: "easeInOut" }}
           />
         </div>
-        testing@gmail.com
+        cosmetologydoc28@gmail.com
       </div>
 
       {/* Telephone Row */}
@@ -75,7 +82,7 @@ function Footer() {
             transition={{ duration: 0.8, ease: "easeInOut" }}
           />
         </div>
-        +1234567890
+        +918830062071
       </div>
 
       {/* Location Row */}
@@ -93,7 +100,11 @@ function Footer() {
             transition={{ duration: 0.8, ease: "easeInOut" }}
           />
         </div>
-        Amsterdam, NL
+        <div className="leading-relaxed">
+          AURA AESTHETICS COSMETOLOGY CLINIC & TRAINING CENTER,<br />
+          Agastya Tower, 102, Opp Shanti Nursing Home,<br />
+          Paithan Road, Kanchan Wadi, Ch.Sambhajinagar, Maharashtra 431002
+        </div>
       </div>
     </div>
     </div>

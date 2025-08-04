@@ -1,30 +1,16 @@
 @import "tailwindcss";
 
-/* Hide default cursor */
+/* Ensure default cursor is visible and working properly */
 * {
-  cursor: none !important;
+  cursor: auto;
 }
 
-/* Ensure the custom cursor stays on top of other elements */
-.custom-cursor {
-  z-index: 9999;
-  pointer-events: none;
-}
-
-/* Smooth transitions for cursor state changes */
-.custom-cursor-inner {
-  transition: transform 0.15s ease, opacity 0.15s ease, background-color 0.2s ease;
-}
-
-/* Cursor hover state */
-.custom-cursor.hover {
-  transform: scale(1.5);
-  background-color: rgba(34, 197, 94, 0.4);
-  border-color: rgba(34, 197, 94, 1);
-}
-
-/* Ensure clickable elements have proper hover states */
+/* Proper cursor states for interactive elements */
 a, button, [role="button"], input, textarea, select, [tabindex] {
-  position: relative;
-  z-index: 1;
+  cursor: pointer;
+}
+
+/* Text cursor for text inputs */
+input[type="text"], input[type="email"], input[type="password"], textarea {
+  cursor: text;
 }

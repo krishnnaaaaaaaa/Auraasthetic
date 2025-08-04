@@ -46,7 +46,7 @@ const HeroSection = () => {
       {/* Left Text Content */}
       <div className="max-w-xl z-10">
         <h1 className="text-4xl md:text-5xl font-extrabold mb-6 leading-tight text-black">
-          AURA AESTHETICS <br />
+          <span className="text-red-600">AURA AESTHETICS</span> <br />
           COSMETOLOGY CLINIC & <br />
           TRAINING CENTER
         </h1>

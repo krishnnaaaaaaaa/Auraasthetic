@@ -17,34 +17,37 @@ const Navbar = () => {
     <>
     
     <nav className="px-4 
-    sm:px-6 py-2 flex flex-wrap items-center justify-between 
-    fixed top-0 left-0 right-0 z-50 bg-white/30 backdrop-blur-md ">
+    sm:px-4 py-2 flex flex-wrap items-center justify-between 
+    fixed top-0 left-0 right-0 z-50 bg-white/50 backdrop-blur-md ">
 
         {/* Logo */}
-      
-       <img
-    src={logo}
-    alt="Logo"
-    className="w-12 sm:w-16 md:w-20 lg:w-24 xl:w-28"
-  />
+        <Link to="/" className="cursor-pointer">
+          <img
+            src={logo}
+            alt="Logo"
+            className="w-10 sm:w-12 md:w-16 lg:w-18 xl:w-20 hover:scale-105 transition-transform duration-200"
+          />
+        </Link>
 
-        {/* Desktop Menu */}
-        <ul className="hidden sm:flex gap-4 text-black font-medium">
+        {/* Desktop Menu - Centered */}
+        <ul className="hidden sm:flex gap-6 text-black font-medium absolute left-1/2 transform -translate-x-1/2">
           {labels.map((item, index) => (
             <motion.li
               key={item}
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
-              animate={
-                hoveredIndex === index
-                  ? { y: [0, -20, 20, 0], opacity: [1, 0, 0, 1] }
-                  : { y: 0, opacity: 1 }
-              }
-              transition={{ duration: 0.9 }}
+              whileHover={{ scale: 1.15 }}
+              whileTap={{ scale: 0.95 }}
+              transition={{ 
+                duration: 0.2, 
+                type: "spring", 
+                stiffness: 400, 
+                damping: 25 
+              }}
               className="cursor-pointer"
             >
                <Link
-            to={`/${item.toLowerCase()}`}
+            to={item === 'Home' ? '/' : `/${item.toLowerCase()}`}
             className="text-black hover:text-gray-600 transition"
             onClick={() => setIsOpen(false)} // Close menu on click
           >
@@ -59,11 +62,12 @@ const Navbar = () => {
    
 
 
-<button
-  onMouseEnter={() => setIsHovered(true)}
-  onMouseLeave={() => setIsHovered(false)}
-  className="sm:hidden mt-2 bg-lime-200 px-3 py-1.5 rounded-full text-black font-semibold text-sm flex items-center gap-1 max-w-[90%] whitespace-nowrap overflow-hidden"
->
+<Link to="/contact">
+  <button
+    onMouseEnter={() => setIsHovered(true)}
+    onMouseLeave={() => setIsHovered(false)}
+    className="sm:hidden mt-2 bg-lime-200 px-3 py-1.5 rounded-full text-black font-semibold text-sm flex items-center gap-1 max-w-[90%] whitespace-nowrap overflow-hidden"
+  >
   {/* Left arrow - only visible when hovered */}
   <AnimatePresence>
     {isHovered && (
@@ -75,7 +79,7 @@ const Navbar = () => {
         transition={{ duration: 0.3 }}
         className="flex items-center"
       >
-        <FiArrowRight className="text-white text-base" />
+        <FiArrowRight className="text-black text-base" />
       </motion.span>
     )}
   </AnimatePresence>
@@ -104,7 +108,8 @@ const Navbar = () => {
       </motion.span>
     )}
   </AnimatePresence>
-</button>
+  </button>
+</Link>
 
 
 
@@ -120,12 +125,13 @@ const Navbar = () => {
 
         {/* Desktop Contact Button */}
         <div className="hidden sm:block">
-          <button
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
-            className="bg-lime-200 px-5 py-2 rounded-full text-black 
-            font-semibold flex items-center gap-2 mr-12"
-          >
+          <Link to="/contact">
+            <button
+              onMouseEnter={() => setIsHovered(true)}
+              onMouseLeave={() => setIsHovered(false)}
+              className="bg-lime-200 px-5 py-2 rounded-full text-black 
+              font-semibold flex items-center gap-2 mr-12"
+            >
             <span className="relative w-4 h-4 inline-block">
               <AnimatePresence>
                 {isHovered && (
@@ -135,7 +141,7 @@ const Navbar = () => {
                     animate={{ x: 0, opacity: 1 }}
                     exit={{ opacity: 0 }}
                     transition={{ duration: 0.4 }}
-                    className="absolute left-0 text-white"
+                    className="absolute left-0 text-black"
                   >
                     <FiArrowRight className="text-lg" />
                   </motion.span>
@@ -155,7 +161,8 @@ const Navbar = () => {
               <FiArrowRight className="text-black text-lg" />
               </motion.span>
             </span>
-          </button>
+            </button>
+          </Link>
         </div>
       </nav>
 
@@ -169,12 +176,14 @@ const Navbar = () => {
           key={item}
           onMouseEnter={() => setHoveredIndex(index)}
           onMouseLeave={() => setHoveredIndex(null)}
-          animate={
-            hoveredIndex === index
-              ? { y: [0, -10, 10, 0], opacity: [1, 0.8, 0.8, 1] }
-              : { y: 0, opacity: 1 }
-          }
-          transition={{ duration: 0.6 }}
+          whileHover={{ scale: 1.15 }}
+          whileTap={{ scale: 0.95 }}
+          transition={{ 
+            duration: 0.2, 
+            type: "spring", 
+            stiffness: 400, 
+            damping: 25 
+          }}
           className="cursor-pointer"
         >
 

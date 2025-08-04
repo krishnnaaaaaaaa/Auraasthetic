@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { FaArrowRight } from 'react-icons/fa';
 import { motion, AnimatePresence } from "framer-motion";
+import { Link } from 'react-router-dom';
 
 const HeroCard = () => {
   const [isHovered, setIsHovered] = useState(false);
@@ -56,11 +57,12 @@ const HeroCard = () => {
         flex-row justify-center items-center gap-3 sm:gap-6 relative z-10 w-full">
 
           {/* Contact Button */}
-          <button
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
-            className="w-full sm:w-auto bg-[#233123] px-6 py-2 rounded-full text-[#C2EA66] font-semibold flex items-center gap-0 overflow-hidden relative justify-center"
-          >
+          <Link to="/contact" className="w-full sm:w-auto">
+            <button
+              onMouseEnter={() => setIsHovered(true)}
+              onMouseLeave={() => setIsHovered(false)}
+              className="w-full sm:w-auto bg-[#233123] px-6 py-2 rounded-full text-[#C2EA66] font-semibold flex items-center gap-0 overflow-hidden relative justify-center"
+            >
             <motion.span
               className="w-5 h-5 absolute left-4"
               initial={false}
@@ -91,18 +93,19 @@ const HeroCard = () => {
                 <FaArrowRight className="text-[#C2EA66]" />
               </motion.span>
             </motion.span>
-          </button>
+            </button>
+          </Link>
 
           {/* Our Courses */}
-          <div
-            className="inline-block w-full sm:w-auto text-center"
-            onMouseEnter={() => setCourseHovered(true)}
-            onMouseLeave={() => setCourseHovered(false)}
-          >
-            <button
-              type="button"
-              className="flex justify-center items-center gap-1 text-black font-semibold text-sm sm:text-base transition-colors w-full sm:w-auto"
+          <Link to="/courses" className="inline-block w-full sm:w-auto text-center">
+            <div
+              onMouseEnter={() => setCourseHovered(true)}
+              onMouseLeave={() => setCourseHovered(false)}
             >
+              <button
+                type="button"
+                className="flex justify-center items-center gap-1 text-black font-semibold text-sm sm:text-base transition-colors w-full sm:w-auto"
+              >
               Our Courses
               <span className="relative w-3 h-4 inline-block">
                 <AnimatePresence mode="wait">
@@ -131,8 +134,9 @@ const HeroCard = () => {
                   )}
                 </AnimatePresence>
               </span>
-            </button>
-          </div>
+              </button>
+            </div>
+          </Link>
 
         </div>
       </div>
