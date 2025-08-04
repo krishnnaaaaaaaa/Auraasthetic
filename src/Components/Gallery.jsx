@@ -34,19 +34,19 @@ const Gallery = () => {
   const topRowImages = [
     {
       id: 1,
-      src: img1,
-      alt: "Beauty Training Session"
+      src: img8, // WhatsApp-Image-2024-01-17-at-13.05.58.jpeg
+      alt: "Professional Beauty Training"
     },
     {
       id: 2,
-      src: img2,
-      alt: "Group Training Session",
+      src: img11, // WhatsApp-Image-2024-01-17-at-13.10.33.jpeg
+      alt: "Expert Cosmetology Training",
       isBig: true
     },
     {
       id: 3,
-      src: img3,
-      alt: "Practical Training"
+      src: img14, // WhatsApp-Image-2024-01-17-at-13.12.13-1.jpeg
+      alt: "Hands-on Beauty Workshop"
     }
   ];
 
@@ -54,28 +54,28 @@ const Gallery = () => {
   const bottomRowImages = [
     {
       id: 4,
-      src: img4,
-      alt: "Students Learning"
+      src: img17, // WhatsApp-Image-2024-01-17-at-13.12.17-1.jpeg
+      alt: "Advanced Beauty Techniques"
     },
     {
       id: 5,
-      src: img5,
-      alt: "Skincare Training"
+      src: img16, // WhatsApp-Image-2024-01-17-at-13.12.14.jpeg
+      alt: "Precision Skincare Training"
     },
     {
       id: 6,
-      src: img6,
-      alt: "Professional Training"
+      src: img15, // WhatsApp-Image-2024-01-17-at-13.12.13.jpeg
+      alt: "Professional Makeup Workshop"
     },
     {
       id: 7,
-      src: img7,
-      alt: "Certificate Ceremony"
+      src: img13, // WhatsApp-Image-2024-01-17-at-13.12.12-1.jpeg
+      alt: "Expert Beauty Consultation"
     },
     {
       id: 8,
-      src: img8,
-      alt: "Advanced Training Session"
+      src: img11, // WhatsApp-Image-2024-01-17-at-13.10.33.jpeg
+      alt: "Comprehensive Cosmetology Training"
     }
   ];
 
