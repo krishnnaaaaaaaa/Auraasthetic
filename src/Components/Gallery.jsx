@@ -1,6 +1,27 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import carouselImage from '../assets/caleb-woods-292OcsAYBK8-unsplash.jpg';
+
+// Import all gallery images
+import img1 from '../assets/WhatsApp-Image-2024-01-17-at-13.01.32 (1).jpeg';
+import img2 from '../assets/WhatsApp-Image-2024-01-17-at-13.01.32.jpeg';
+import img3 from '../assets/WhatsApp-Image-2024-01-17-at-13.04.08.jpeg';
+import img4 from '../assets/WhatsApp-Image-2024-01-17-at-13.05.56.jpeg';
+import img5 from '../assets/WhatsApp-Image-2024-01-17-at-13.05.57-1.jpeg';
+import img6 from '../assets/WhatsApp-Image-2024-01-17-at-13.05.57.jpeg';
+import img7 from '../assets/WhatsApp-Image-2024-01-17-at-13.05.58-1.jpeg';
+import img8 from '../assets/WhatsApp-Image-2024-01-17-at-13.05.58-2.jpeg';
+import img9 from '../assets/WhatsApp-Image-2024-01-17-at-13.05.58-1536x1152.jpeg';
+import img10 from '../assets/WhatsApp-Image-2024-01-17-at-13.05.58.jpeg';
+import img11 from '../assets/WhatsApp-Image-2024-01-17-at-13.10.33.jpeg';
+import img12 from '../assets/WhatsApp-Image-2024-01-17-at-13.12.12-1.jpeg';
+import img13 from '../assets/WhatsApp-Image-2024-01-17-at-13.12.12.jpeg';
+import img14 from '../assets/WhatsApp-Image-2024-01-17-at-13.12.13-1.jpeg';
+import img15 from '../assets/WhatsApp-Image-2024-01-17-at-13.12.13.jpeg';
+import img16 from '../assets/WhatsApp-Image-2024-01-17-at-13.12.14.jpeg';
+import img17 from '../assets/WhatsApp-Image-2024-01-17-at-13.12.17-1.jpeg';
+import img18 from '../assets/WhatsApp-Image-2024-01-17-at-13.12.17-2.jpeg';
+import img19 from '../assets/WhatsApp-Image-2024-01-17-at-13.12.17.jpeg';
+import img20 from '../assets/WhatsApp-Image-2024-01-17-at-13.12.18.jpeg';
 
 const Gallery = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -12,18 +33,18 @@ const Gallery = () => {
   const topRowImages = [
     {
       id: 1,
-      src: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-      alt: "Beauty Treatment Session"
+      src: img1,
+      alt: "Beauty Training Session"
     },
     {
       id: 2,
-      src: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      src: img2,
       alt: "Group Training Session",
       isBig: true
     },
     {
       id: 3,
-      src: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+      src: img3,
       alt: "Practical Training"
     }
   ];
@@ -32,33 +53,38 @@ const Gallery = () => {
   const bottomRowImages = [
     {
       id: 4,
-      src: "https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+      src: img4,
       alt: "Students Learning"
     },
     {
       id: 5,
-      src: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+      src: img5,
       alt: "Skincare Training"
     },
     {
       id: 6,
-      src: "https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+      src: img6,
       alt: "Professional Training"
     },
     {
       id: 7,
-      src: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+      src: img7,
       alt: "Certificate Ceremony"
     },
     {
       id: 8,
-      src: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+      src: img8,
       alt: "Advanced Training Session"
     }
   ];
 
-  // Carousel images (20 images) - All using the same local image
-  const carouselImages = Array(20).fill(carouselImage);
+  // Carousel images (all 20 images in rotation)
+  const carouselImages = [
+    img1, img2, img3, img4, img5, 
+    img6, img7, img8, img9, img10,
+    img11, img12, img13, img14, img15,
+    img16, img17, img18, img19, img20
+  ];
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % carouselImages.length);
@@ -188,10 +214,10 @@ const Gallery = () => {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="relative rounded-2xl overflow-hidden"
+          className="relative rounded-3xl sm:rounded-4xl overflow-hidden max-w-6xl mx-auto w-full px-2 sm:px-4"
         >
           <div 
-            className="relative h-64 sm:h-80 md:h-96"
+            className="relative h-72 sm:h-96 md:h-[32rem] overflow-hidden rounded-2xl sm:rounded-3xl"
             onTouchStart={onTouchStart}
             onTouchMove={onTouchMove}
             onTouchEnd={onTouchEnd}
@@ -201,7 +227,7 @@ const Gallery = () => {
             <img
               src={carouselImages[currentSlide]}
               alt={`Gallery Image ${currentSlide + 1}`}
-              className="w-full h-full object-cover transition-all duration-500"
+              className="w-full h-full object-cover transition-all duration-500 rounded-2xl sm:rounded-3xl"
             />
             
             {/* Navigation Arrows */}

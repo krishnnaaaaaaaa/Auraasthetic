@@ -5,6 +5,9 @@ import ValuesSection from "./ValuesSection";
 import WSpecial from "./WSpecial";
 import WelcomeCard from "./WelcomeCard";
 import CareerSection from "./CareerSection";
+import leftImage from "../../assets/woman-cosmetologist-making-beauty-procedures (1).jpg";
+import middleImage from "../../assets/woman-having-skincare-treatment (1).jpg";
+import rightImage from "../../assets/professional-woman-applying-cream-her-face-another-woman.jpg";
 
 const About = () => {
   return (
@@ -24,8 +27,8 @@ const About = () => {
       <div className="relative flex flex-col md:flex-row justify-center items-center mt-16 gap-6 md:gap-0 h-auto md:h-[500px]">
         {/* Left Image */}
         <motion.img
-          src="https://framerusercontent.com/images/iVtX0YCAZy7c9g1sllMckcjjtQs.png?scale-down-to=1024"
-          alt="Doctor Left"
+          src={leftImage}
+          alt="Professional Cosmetology Treatment"
           className="w-64 sm:w-72 md:w-64 h-64 sm:h-72 md:h-[420px] object-cover rounded-3xl 
                      -mb-16 shadow-xl border-4 border-white 
                      md:absolute md:left-1/2 md:transform md:-translate-x-[140%]
@@ -37,8 +40,8 @@ const About = () => {
 
         {/* Middle Image */}
         <motion.img
-          src="https://framerusercontent.com/images/Fx1ysnOe6p7rGFiO1jqn5Nro.png?scale-down-to=1024"
-          alt="Doctor Center"
+          src={middleImage}
+          alt="Professional Skin Treatment"
           className="w-64 sm:w-72 md:w-72 h-72 sm:h-80 md:h-[440px] object-cover rounded-3xl 
                      shadow-2xl border-4 border-white z-20 
                      -mb-16 rotate-[4deg] md:rotate-0"
@@ -49,8 +52,8 @@ const About = () => {
 
         {/* Right Image */}
         <motion.img
-          src="https://framerusercontent.com/images/vjZg97oAlzIO55UtNcg8xy13Rs8.png?scale-down-to=1024"
-          alt="Doctor Right"
+          src={rightImage}
+          alt="Professional Skincare Application"
           className="w-64 sm:w-72 md:w-64 h-64 sm:h-72 md:h-[420px] object-cover rounded-3xl 
                      shadow-xl border-4 border-white 
                      rotate-[6deg] md:rotate-[20deg] z-10

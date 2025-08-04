@@ -188,7 +188,7 @@ const Navbar = () => {
         >
 
             <Link
-            to={`/${item.toLowerCase()}`}
+            to={item === 'Home' ? '/' : `/${item.toLowerCase()}`}
             className="text-black hover:text-gray-600 transition"
             onClick={() => setIsOpen(false)} // Close menu on click
           >

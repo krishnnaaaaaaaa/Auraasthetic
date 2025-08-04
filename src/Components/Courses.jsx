@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import coursesHeroImage from '../assets/visagiste-creating-professional-makeup-woman-studio.jpg';
+import skillBadgeImage from '../assets/4.png';
 
 const Courses = () => {
   const [selectedBadges, setSelectedBadges] = useState([]);
@@ -62,8 +64,8 @@ const Courses = () => {
         className="relative mt-12 mb-16 mx-auto max-w-4xl"
       >
         <img
-          src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
-          alt="Professional Training Session"
+          src={coursesHeroImage}
+          alt="Professional makeup artist at work"
           className="w-full h-48 sm:h-64 md:h-80 object-cover rounded-3xl shadow-2xl"
         />
         <div className="absolute top-4 right-4 bg-white/20 backdrop-blur-md rounded-lg p-2 sm:p-3">
@@ -107,8 +109,8 @@ const Courses = () => {
               {/* Profile Icon */}
               <div className="w-6 h-6 bg-gray-300 rounded-full flex-shrink-0 overflow-hidden">
                 <img 
-                  src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" 
-                  alt="Profile" 
+                  src={skillBadgeImage} 
+                  alt="Skill Badge" 
                   className="w-full h-full object-cover"
                 />
               </div>

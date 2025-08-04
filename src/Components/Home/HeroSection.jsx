@@ -1,7 +1,7 @@
 
 import React ,{useEffect,useState} from 'react';
-import mainImage from '../../assets/frontimg.jpeg';      // Foreground image
-import backgroundImage from '../../assets/backimg.jpg'; // Background tilted image
+import mainImage from '../../assets/woman-having-skincare-treatment.jpg';      // Foreground image
+import backgroundImage from '../../assets/woman-cosmetologist-making-beauty-procedures.jpg'; // Background tilted image
 import { motion } from "framer-motion";
 
 

@@ -1,5 +1,7 @@
 
 import React from 'react';
+import firstImage from '../../assets/girl-receiving-facial-treatment-beauty-salon.jpg';
+import secondImage from '../../assets/cosmetologist-making-injections-face-woman-beauty-salon.jpg';
 
 const WelcomeCard = () => {
   return (
@@ -10,17 +12,17 @@ const WelcomeCard = () => {
         <div className="flex  sm:flex-row justify-center items-center relative gap-6 sm:px-10">
           {/* First Image */}
           <img
-            src="https://framerusercontent.com/images/0QG2eemdKv0RN1rXzXDlBBpME.png?scale-down-to=1024"
-            alt="Doctor with Patient"
+            src={firstImage}
+            alt="Girl receiving facial treatment"
             className="rounded-xl w-40 sm:w-40 md:w-60 lg:w-64 xl:w-72 object-cover shadow-lg
-             max-h-[400px] z-10"
+             max-h-[400px] z-10 transform hover:scale-105 transition-transform duration-300"
           />
 
           {/* Second Image */}
           <img
-            src="https://framerusercontent.com/images/5WmJdglqGO8oJYIEmg8bi3llSzw.png?scale-down-to=1024"
-            alt="Receptionist"
-            className="rounded-xl w-36 sm:w-40 md:w-52 lg:w-60 object-cover shadow-lg max-h-[340px] z-20 -mt-2 sm:mt-0"
+            src={secondImage}
+            alt="Professional cosmetologist performing facial treatment"
+            className="rounded-xl w-36 sm:w-40 md:w-52 lg:w-60 object-cover shadow-lg max-h-[340px] z-20 -mt-2 sm:mt-0 transform hover:scale-105 transition-transform duration-300"
           />
         </div>
 

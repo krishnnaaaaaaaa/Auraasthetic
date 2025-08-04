@@ -1,5 +1,6 @@
 
 import React from 'react';
+import specialImage from '../../assets/high-angle-professional-putting-hair-net.jpg';
 
 const WSpecial = () => {
   const features = [
@@ -33,17 +34,13 @@ const WSpecial = () => {
 
         {/* Right Image */}
        
-       <div className="flex-[1_1_300px] flex justify-center min-w-0 relative">
-  {/* Background Layer */}
-  <div className="absolute bottom-0 w-full h-[60%] bg-[#FFF3EB] rounded-b-2xl z-0" />
-
-  {/* Image */}
-  <img
-    src="https://framerusercontent.com/images/LdSetSBO6E5sof4y9T819dgbhCY.png"
-    alt="Doctor"
-    className="w-full max-w-[300px] sm:max-w-[350px] md:max-w-md lg:max-w-lg rounded-2xl object-cover relative z-10"
-  />
-</div>
+       <div className="flex-[1_1_300px] flex justify-center min-w-0">
+         <img
+           src={specialImage}
+           alt="Professional applying hair net"
+           className="w-full max-w-[240px] sm:max-w-[280px] md:max-w-[320px] lg:max-w-[360px] h-[240px] sm:h-[280px] md:h-[320px] object-cover rounded-xl shadow-lg"
+         />
+       </div>
 
       </div>
     </section>

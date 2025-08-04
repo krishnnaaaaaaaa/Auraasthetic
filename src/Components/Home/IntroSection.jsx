@@ -1,16 +1,17 @@
 
 import React from "react";
+import whoWeAreImage from '../../assets/young-woman-lying-cosmetologist-s-table-rejuvenation-procedure-cosmetologist-take-care-about-neck-face-skin-youthfull-wellness-hardware-face-cleaning-procedure.jpg';
 
 const IntroSection = () => {
   return (
     <section className="bg-lime-300 py-8 px-4 sm:px-6">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-6 md:gap-10">
         {/* Image */}
-        <div className="w-full md:w-2/5 rounded-xl overflow-hidden shadow-xl">
+        <div className="w-full md:w-[35%] rounded-2xl overflow-hidden shadow-xl">
           <img
-            src="https://framerusercontent.com/images/QdVYI8aTz18V1r1rjwLrdF7occ.jpeg"
-            alt="Makeup artist"
-            className="w-full h-full object-cover rounded-xl"
+            src={whoWeAreImage}
+            alt="Professional skin treatment"
+            className="w-full h-[280px] sm:h-[320px] object-cover rounded-2xl transform hover:scale-105 transition-transform duration-300"
           />
         </div>
 
