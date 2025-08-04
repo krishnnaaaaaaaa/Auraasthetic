@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import coursesHeroImage from '../assets/visagiste-creating-professional-makeup-woman-studio.jpg';
 import skillBadgeImage from '../assets/4.png';
+import Faq from './Faq';
+import HeroCard from './Home/HeroCard';
 
 const Courses = () => {
   const [selectedBadges, setSelectedBadges] = useState([]);
@@ -117,6 +119,26 @@ const Courses = () => {
               <span>{skill}</span>
             </motion.div>
           ))}
+        </motion.div>
+
+        {/* FAQ Section */}
+        <motion.div 
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="mt-24"
+        >
+          <Faq />
+        </motion.div>
+
+        {/* Hero Card Section */}
+        <motion.div 
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="mt-24"
+        >
+          <HeroCard />
         </motion.div>
       </div>
     </div>

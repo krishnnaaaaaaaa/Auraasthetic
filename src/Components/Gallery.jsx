@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import Faq from './Faq';
+import HeroCard from './Home/HeroCard';
 
 // Import all gallery images
 import img1 from '../assets/WhatsApp-Image-2024-01-17-at-13.01.32 (1).jpeg';
@@ -278,6 +280,26 @@ const Gallery = () => {
               ))}
             </div>
           </div>
+        </motion.div>
+
+        {/* FAQ Section */}
+        <motion.div 
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="mt-24"
+        >
+          <Faq />
+        </motion.div>
+
+        {/* Hero Card Section */}
+        <motion.div 
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="mt-24"
+        >
+          <HeroCard />
         </motion.div>
       </div>
     </div>

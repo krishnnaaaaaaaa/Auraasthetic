@@ -7,6 +7,7 @@ import drSwatiImage from '../assets/2e81d608-6a1e-4cdd-8725-795c66c88dcb-1.jpeg'
 import drShwetaImage from '../assets/160b1cd6-c72e-414b-8f62-9fd6a691d733.jpeg';
 import drShilpaImage from '../assets/WhatsApp-Image-2024-01-12-at-10.31.47.jpeg';
 import drAshwiniImage from '../assets/WhatsApp-Image-2024-01-12-at-10.36.08.jpeg';
+import HeroCard from './Home/HeroCard';
 
 // Play and Pause SVG Icons
 const PlayIcon = () => (
@@ -64,39 +65,25 @@ const VideoPlayer = ({ src, aspectRatio, className = '' }) => {
     }
   };
 
-  // Auto-play with sound on user interaction
+  // Handle user interaction to play video
   const handleUserInteraction = () => {
     if (videoRef.current) {
-      // Unmute before playing
-      videoRef.current.muted = false;
-      setIsMuted(false);
-      
-      const playPromise = videoRef.current.play();
-      if (playPromise !== undefined) {
-        playPromise.catch(error => {
-          console.log('Auto-play was prevented:', error);
-          // If autoplay fails, show controls
-          videoRef.current.controls = true;
-        });
+      // Toggle play/pause on user interaction
+      if (isPlaying) {
+        videoRef.current.pause();
+      } else {
+        videoRef.current.play();
       }
-      setIsPlaying(true);
+      setIsPlaying(!isPlaying);
     }
   };
   
-  // Set initial volume and autoplay on component mount
+  // Set initial volume and video settings
   useEffect(() => {
     if (videoRef.current) {
       videoRef.current.volume = 0.5; // Set default volume to 50%
       videoRef.current.muted = false; // Ensure not muted initially
-      
-      // Try to autoplay with sound
-      const playPromise = videoRef.current.play();
-      if (playPromise !== undefined) {
-        playPromise.catch(error => {
-          console.log('Initial autoplay was prevented:', error);
-          // If autoplay fails, we'll wait for user interaction
-        });
-      }
+      videoRef.current.playsInline = true; // For better mobile experience
     }
   }, []);
 
@@ -111,9 +98,9 @@ const VideoPlayer = ({ src, aspectRatio, className = '' }) => {
         className="w-full h-full object-cover rounded-2xl"
         loop
         muted={false}
-        controls={false}
-        autoPlay
         playsInline
+        style={{ aspectRatio: '9/16' }}
+        controls={false}
         preload="metadata"
         onPlay={() => setIsPlaying(true)}
         onPause={() => setIsPlaying(false)}
@@ -229,21 +216,21 @@ const Testimonial = () => {
 
       </div>
 
-      {/* Hero Video Section - 16:9 Aspect Ratio */}
+      {/* Hero Video Section - 9:16 Aspect Ratio */}
       <motion.div 
-        initial={{ opacity: 0, scale: 0.9 }}
-        animate={{ opacity: 1, scale: 1 }}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.4 }}
-        className="relative mt-12 mb-16 mx-auto max-w-4xl"
+        className="relative mt-12 mb-16 mx-auto max-w-5xl px-4"
       >
-        <div className="relative">
+        <div className="w-full relative group" style={{ aspectRatio: '16/9' }}>
           <VideoPlayer 
             src={heroVideo}
-            aspectRatio={{ aspectRatio: '16/9' }}
-            className="w-full rounded-3xl shadow-2xl overflow-hidden"
+            aspectRatio={{ width: '100%', height: '100%' }}
+            className="w-full h-full rounded-2xl shadow-xl overflow-hidden"
           />
           <div className="absolute top-4 right-4 bg-white/20 backdrop-blur-md rounded-lg p-2 sm:p-3">
-            <span className="text-white font-semibold text-xs sm:text-sm md:text-base">Join 5,000+</span>
+            <span className="text-white font-semibold text-xs sm:text-sm md:text-base">Join Now</span>
           </div>
         </div>
       </motion.div>
@@ -289,45 +276,54 @@ const Testimonial = () => {
             ))}
           </div>
 
-          {/* Video Gallery - 9:16 Aspect Ratio */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 mb-8 sm:mb-12 md:mb-16">
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              className="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300"
-            >
-              <VideoPlayer 
-                src={galleryVideo1}
-                aspectRatio={{ 
-                  aspectRatio: '9/16',
-                  maxWidth: '350px',
-                  margin: '0 auto'
-                }}
-                className="w-full h-full hover:scale-105 transition-transform duration-300"
-              />
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300"
-            >
-              <VideoPlayer 
-                src={galleryVideo2}
-                aspectRatio={{ 
-                  aspectRatio: '9/16',
-                  maxWidth: '350px',
-                  margin: '0 auto'
-                }}
-                className="w-full h-full hover:scale-105 transition-transform duration-300"
-              />
-            </motion.div>
+          {/* Video Gallery - Side by Side Videos */}
+          <div className="w-full max-w-3xl mx-auto px-4 mt-12">
+            <div className="flex flex-wrap justify-center gap-4 md:gap-6">
+              {/* First Video (9:16) */}
+              <motion.div 
+                className="w-full max-w-[220px] md:max-w-[240px]"
+                style={{ aspectRatio: '9/16' }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+              >
+                <VideoPlayer 
+                  src={galleryVideo1}
+                  aspectRatio={{ width: '100%', height: '100%' }}
+                  className="w-full h-full hover:scale-[1.02] transition-all duration-300 rounded-[20px] shadow-xl overflow-hidden"
+                />
+              </motion.div>
+              
+              {/* Second Video (9:16) */}
+              <motion.div 
+                className="w-full max-w-[220px] md:max-w-[240px]"
+                style={{ aspectRatio: '9/16' }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+              >
+                <VideoPlayer 
+                  src={galleryVideo2}
+                  aspectRatio={{ width: '100%', height: '100%' }}
+                  className="w-full h-full hover:scale-[1.02] transition-all duration-300 rounded-[20px] shadow-xl overflow-hidden"
+                />
+              </motion.div>
+            </div>
           </div>
         </div>
       </div>
 
-
+      {/* Hero Card Section */}
+      <motion.div 
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        className="mt-16"
+      >
+        <HeroCard />
+      </motion.div>
     </div>
   );
 };

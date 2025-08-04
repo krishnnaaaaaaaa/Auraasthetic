@@ -5,6 +5,8 @@ import ValuesSection from "./ValuesSection";
 import WSpecial from "./WSpecial";
 import WelcomeCard from "./WelcomeCard";
 import CareerSection from "./CareerSection";
+import Faq from "../Faq";
+import HeroCard from "../Home/HeroCard";
 import leftImage from "../../assets/woman-cosmetologist-making-beauty-procedures (1).jpg";
 import middleImage from "../../assets/woman-having-skincare-treatment (1).jpg";
 import rightImage from "../../assets/professional-woman-applying-cream-her-face-another-woman.jpg";
@@ -69,6 +71,26 @@ const About = () => {
       <WelcomeCard />
       <WSpecial />
       <CareerSection />
+
+      {/* FAQ Section */}
+      <motion.div 
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        className="mt-24"
+      >
+        <Faq />
+      </motion.div>
+
+      {/* Hero Card Section */}
+      <motion.div 
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+        className="mt-24"
+      >
+        <HeroCard />
+      </motion.div>
     </div>
   );
 };

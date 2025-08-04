@@ -8,7 +8,7 @@ const faqData = [
   },
   {
     question: "Is there any downtime after cosmetic procedures?",
-    answer: "Most of our treatments are non-surgical and involve minimal to no downtime, so you can return to your routine quickly.",
+    answer: "",
   },
   {
     question: "Do you offer personalized treatment plans?",
@@ -16,7 +16,15 @@ const faqData = [
   },
   {
     question: "Who can join the cosmetology courses?",
-    answer: "Our courses are open to beginners and professionals looking to enhance their skills in the field of aesthetics and cosmetology.",
+    answer: "Anyone with a passion for skincare and beauty can enroll - whether you're a beginner or a professional looking to upskill.",
+  },
+  {
+    question: "Will I get hands-on training during the course?",
+    answer: "MBBS, BDS, BAMS, & BHMS graduates",
+  },
+  {
+    question: "Do you provide post-course support or guidance?",
+    answer: "Yes, we offer 6 months of extended access and mentorship to support your journey even after the course ends.",
   },
 ];
 

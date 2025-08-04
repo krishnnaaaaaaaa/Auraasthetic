@@ -61,7 +61,7 @@ const HeroCard = () => {
             <button
               onMouseEnter={() => setIsHovered(true)}
               onMouseLeave={() => setIsHovered(false)}
-              className="w-full sm:w-auto bg-[#233123] px-6 py-2 rounded-full text-[#C2EA66] font-semibold flex items-center gap-0 overflow-hidden relative justify-center"
+              className="w-full sm:w-auto bg-[#233123] px-4 sm:px-6 py-2 sm:py-2.5 rounded-full text-[#C2EA66] text-sm sm:text-base font-semibold flex items-center gap-0 overflow-hidden relative justify-center"
             >
             <motion.span
               className="w-5 h-5 absolute left-4"

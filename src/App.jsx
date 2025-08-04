@@ -1,17 +1,26 @@
-import { useState } from 'react'
+import { Suspense, lazy, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import './App.css'
-import Navbar from "./Components/Navbar";
-import About from './Components/About/About'
-import Faq from './Components/Faq'
-import HeroCard from './Components/Home/HeroCard'
-import Footer from './Components/Footer'
-import Home from './Components/Home/Home'
-import Testimonial from './Components/Testimonial'
-import Gallery from './Components/Gallery'
-import Courses from './Components/Courses'
-import Contact from './Components/Contact'
-import WhatsAppFloat from './Components/WhatsAppFloat';
+import './App.css';
+
+// Lazy load components
+const Navbar = lazy(() => import("./Components/Navbar"));
+const About = lazy(() => import('./Components/About/About'));
+const Faq = lazy(() => import('./Components/Faq'));
+const HeroCard = lazy(() => import('./Components/Home/HeroCard'));
+const Footer = lazy(() => import('./Components/Footer'));
+const Home = lazy(() => import('./Components/Home/Home'));
+const Testimonial = lazy(() => import('./Components/Testimonial'));
+const Gallery = lazy(() => import('./Components/Gallery'));
+const Courses = lazy(() => import('./Components/Courses'));
+const Contact = lazy(() => import('./Components/Contact'));
+const WhatsAppFloat = lazy(() => import('./Components/WhatsAppFloat'));
+
+// Loading component
+const Loading = () => (
+  <div className="min-h-screen flex items-center justify-center bg-gray-50">
+    <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
+  </div>
+);
 
 function App() {
   const [count, setCount] = useState(0)
@@ -19,25 +28,47 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <Navbar />
-        <main>
-          <Routes>
-            <Route path="/" element={
-              <>
-                <Home />
-                <Faq />
-                <HeroCard />
-              </>
-            } />
-            <Route path="/about" element={<About />} />
-            <Route path="/testimonial" element={<Testimonial />} />
-            <Route path="/gallery" element={<Gallery />} />
-            <Route path="/courses" element={<Courses />} />
-            <Route path="/contact" element={<Contact />} />
-          </Routes>
-        </main>
-        <WhatsAppFloat />
-        <Footer />
+        <Suspense fallback={<Loading />}>
+          <Navbar />
+          <main>
+            <Routes>
+              <Route path="/" element={
+                <Suspense fallback={<Loading />}>
+                  <Home />
+                  <Faq />
+                  <HeroCard />
+                </Suspense>
+              } />
+              <Route path="/about" element={
+                <Suspense fallback={<Loading />}>
+                  <About />
+                </Suspense>
+              } />
+              <Route path="/testimonial" element={
+                <Suspense fallback={<Loading />}>
+                  <Testimonial />
+                </Suspense>
+              } />
+              <Route path="/gallery" element={
+                <Suspense fallback={<Loading />}>
+                  <Gallery />
+                </Suspense>
+              } />
+              <Route path="/courses" element={
+                <Suspense fallback={<Loading />}>
+                  <Courses />
+                </Suspense>
+              } />
+              <Route path="/contact" element={
+                <Suspense fallback={<Loading />}>
+                  <Contact />
+                </Suspense>
+              } />
+            </Routes>
+          </main>
+          <WhatsAppFloat />
+          <Footer />
+        </Suspense>
       </Router>
     </div>
   )
