@@ -27,7 +27,6 @@ import img20 from '../assets/WhatsApp-Image-2024-01-17-at-13.12.18.jpeg';
 
 const Gallery = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
   const [touchStart, setTouchStart] = useState(null);
   const [touchEnd, setTouchEnd] = useState(null);
 
@@ -96,16 +95,7 @@ const Gallery = () => {
     setCurrentSlide((prev) => (prev - 1 + carouselImages.length) % carouselImages.length);
   };
 
-  // Auto-slide functionality
-  useEffect(() => {
-    if (!isAutoPlaying) return;
-    
-    const interval = setInterval(() => {
-      nextSlide();
-    }, 4000); // Change slide every 4 seconds
 
-    return () => clearInterval(interval);
-  }, [currentSlide, isAutoPlaying]);
 
   // Touch/Swipe functionality
   const minSwipeDistance = 50;
@@ -113,7 +103,6 @@ const Gallery = () => {
   const onTouchStart = (e) => {
     setTouchEnd(null);
     setTouchStart(e.targetTouches[0].clientX);
-    setIsAutoPlaying(false); // Pause auto-play when user interacts
   };
 
   const onTouchMove = (e) => {
@@ -133,19 +122,11 @@ const Gallery = () => {
       prevSlide();
     }
     
-    // Resume auto-play after 3 seconds of no interaction
-    setTimeout(() => {
-      setIsAutoPlaying(true);
-    }, 3000);
+
   };
 
   const handleManualNavigation = (action) => {
-    setIsAutoPlaying(false);
     action();
-    // Resume auto-play after 5 seconds
-    setTimeout(() => {
-      setIsAutoPlaying(true);
-    }, 5000);
   };
 
   return (
@@ -223,8 +204,6 @@ const Gallery = () => {
             onTouchStart={onTouchStart}
             onTouchMove={onTouchMove}
             onTouchEnd={onTouchEnd}
-            onMouseEnter={() => setIsAutoPlaying(false)}
-            onMouseLeave={() => setIsAutoPlaying(true)}
           >
             <img
               src={carouselImages[currentSlide]}
@@ -251,22 +230,7 @@ const Gallery = () => {
               </svg>
             </button>
             
-            {/* Auto-play indicator */}
-            <div className="absolute top-4 left-4 bg-white/20 backdrop-blur-md rounded-full px-3 py-1 flex items-center gap-1">
-              {isAutoPlaying ? (
-                <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M8 5v14l11-7z"/>
-                </svg>
-              ) : (
-                <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
-                </svg>
-              )}
-              <span className="text-white text-xs font-medium">
-                {isAutoPlaying ? 'Auto' : 'Paused'}
-              </span>
-            </div>
-            
+
             {/* Slide Indicators */}
             <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
               {carouselImages.map((_, index) => (
