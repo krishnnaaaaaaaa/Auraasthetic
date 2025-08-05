@@ -128,6 +128,8 @@ const Contact = () => {
     }
   };
 
+  const TALLY_FORM_URL = 'https://tally.so/r/3NZADB';
+
   const faqItems = [
     "Are all treatments doctor-supervised?",
     "Is there any downtime after cosmetic procedures?",
@@ -201,115 +203,21 @@ const Contact = () => {
               </div>
             </div>
 
-            {/* Right Side - Contact Form */}
-            <div>
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <div className="grid sm:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-sm font-medium mb-1 text-lime-200">
-                      Full Name
-                    </label>
-                    <input
-                      type="text"
-                      name="fullName"
-                      value={formData.fullName}
-                      onChange={handleInputChange}
-                      placeholder="John Doe"
-                      className={`w-full px-3 py-2 bg-white/10 border rounded-lg text-white placeholder-white/60 focus:outline-none ${
-                        errors.fullName ? 'border-red-400 focus:border-red-400' : 'border-white/20 focus:border-lime-200'
-                      }`}
-                    />
-                    {errors.fullName && (
-                      <p className="text-red-300 text-xs mt-1">{errors.fullName}</p>
-                    )}
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium mb-1 text-lime-200">
-                      Email Address
-                    </label>
-                    <input
-                      type="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleInputChange}
-                      placeholder="johndoe@gmail.com"
-                      className={`w-full px-3 py-2 bg-white/10 border rounded-lg text-white placeholder-white/60 focus:outline-none ${
-                        errors.email ? 'border-red-400 focus:border-red-400' : 'border-white/20 focus:border-lime-200'
-                      }`}
-                    />
-                    {errors.email && (
-                      <p className="text-red-300 text-xs mt-1">{errors.email}</p>
-                    )}
-                  </div>
-                </div>
-                
-                <div>
-                  <label className="block text-sm font-medium mb-1 text-lime-200">
-                    Phone Number
-                  </label>
-                  <input
-                    type="tel"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleInputChange}
-                    placeholder="+123 456 789"
-                    className={`w-full px-3 py-2 bg-white/10 border rounded-lg text-white placeholder-white/60 focus:outline-none ${
-                      errors.phone ? 'border-red-400 focus:border-red-400' : 'border-white/20 focus:border-lime-200'
-                    }`}
-                  />
-                  {errors.phone && (
-                    <p className="text-red-300 text-xs mt-1">{errors.phone}</p>
-                  )}
-                </div>
-                
-                <div>
-                  <label className="block text-sm font-medium mb-1 text-lime-200">
-                    Message
-                  </label>
-                  <textarea
-                    name="message"
-                    value={formData.message}
-                    onChange={handleInputChange}
-                    placeholder="Type your message here !!!"
-                    rows="4"
-                    className={`w-full px-3 py-2 bg-white/10 border rounded-lg text-white placeholder-white/60 focus:outline-none resize-none ${
-                      errors.message ? 'border-red-400 focus:border-red-400' : 'border-white/20 focus:border-lime-200'
-                    }`}
-                  ></textarea>
-                  {errors.message && (
-                    <p className="text-red-300 text-xs mt-1">{errors.message}</p>
-                  )}
-                </div>
-                
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className={`w-full py-3 rounded-lg font-semibold transition-colors duration-200 ${
-                    isSubmitting 
-                      ? 'bg-gray-400 text-gray-600 cursor-not-allowed' 
-                      : 'bg-lime-200 text-green-800 hover:bg-lime-300'
-                  }`}
-                >
-                  {isSubmitting ? 'Submitting...' : 'Submit your form'}
-                </button>
-                
-                {/* Status Messages */}
-                {submitStatus === 'success' && (
-                  <p className="text-xs text-lime-200 text-center font-semibold">
-                    ✅ Message sent successfully! We'll be back within 48 hours.
-                  </p>
-                )}
-                {submitStatus === 'error' && (
-                  <p className="text-xs text-red-300 text-center font-semibold">
-                    ❌ Error sending message. Please try again.
-                  </p>
-                )}
-                {!submitStatus && (
-                  <p className="text-xs text-white/70 text-center">
-                    We'll be back within 48 hours or sooner
-                  </p>
-                )}
-              </form>
+            {/* Right Side - Tally Form */}
+            <div className="bg-white rounded-2xl p-0 overflow-hidden">
+              <iframe 
+                src={TALLY_FORM_URL} 
+                width="100%" 
+                height="600" 
+                frameBorder="0" 
+                marginHeight="0" 
+                marginWidth="0"
+                title="Contact Form"
+                className="w-full rounded-2xl"
+                style={{ minHeight: '600px', maxHeight: '600px' }}
+              >
+                Loading...
+              </iframe>
             </div>
           </div>
         </div>
