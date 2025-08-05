@@ -36,7 +36,7 @@ const WelcomeCard = () => {
             A premier beauty school dedicated to providing students with exceptional training and education in the field of cosmetology.
           </p>
           <p className="text-gray-700 text-sm sm:text-base mb-6 leading-relaxed">
-            Our mission is to equip our students with the knowledge, skills, and tools necessary to succeed in the beauty industry. We offer courses, including hair care and skin care, all taught by experienced doctors who are passionate about mentoring.
+            Our mission is to equip our students with the knowledge, skills, and tools necessary to succeed in the beauty cosmetology and aesthetic industry. We offer courses, including hair care and skin care, all taught by experienced doctors who are passionate about mentoring. 
           </p>
           <Link to="/courses" className="inline-block">
             <button className="bg-[#233123] text-white font-semibold py-2 px-5 rounded-full transition duration-300 hover:bg-green-900">
