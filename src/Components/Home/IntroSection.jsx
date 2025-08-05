@@ -26,7 +26,7 @@ const IntroSection = () => {
             Welcome to Aura Aesthetics Cosmetology Clinic & Training Center (AACCTC), a premier aesthetic school dedicated to providing students with exceptional training and education in the field of cosmetology.
           </p>
           <p className="text-sm sm:text-base leading-relaxed font-medium text-justify sm:text-left">
-            Our mission is to empower aspiring beauty professionals with the skills, knowledge, and confidence needed to excel in their careers. We offer comprehensive courses in makeup artistry, skincare, hair styling, and more, all taught by industry experts in a supportive and creative environment.
+            Our mission is to equip our students with the knowledge, skills, and tools necessary to succeed in the beauty cosmetology and aesthetic industry. We offer courses, including hair care and skin care, all taught by experienced doctors who are passionate about mentoring.
           </p>
         </div>
       </div>
