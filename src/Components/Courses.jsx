@@ -18,6 +18,7 @@ const Courses = () => {
 
   // Skills/Features badges
   const skillBadges = [
+    "MASTERS COURSE IN CLINICAL COSMETOLOGY",
     "SKIN AESTHETICS & SCOPE",
     "CONCEPT OF TRICHOLOGY",
     "CHEMICAL PEELS",

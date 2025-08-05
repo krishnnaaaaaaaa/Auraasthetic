@@ -16,11 +16,11 @@ const faqData = [
   },
   {
     question: "Who can join the cosmetology courses?",
-    answer: "Anyone with a passion for skincare and beauty can enroll - whether you're a beginner or a professional looking to upskill.",
+    answer: "MBBS, BDS, BAMS, & BHMS graduates etc.",
   },
   {
     question: "Will I get hands-on training during the course?",
-    answer: "MBBS, BDS, BAMS, & BHMS graduates",
+    answer: "For every processor complete hands on trainings Given.",
   },
   {
     question: "Do you provide post-course support or guidance?",
