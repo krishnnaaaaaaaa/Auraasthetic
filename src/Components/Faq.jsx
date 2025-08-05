@@ -8,7 +8,7 @@ const faqData = [
   },
   {
     question: "Is there any downtime after cosmetic procedures?",
-    answer: "",
+    answer: "Most of our treatments are non-surgical and involve minimal to no downtime, so you can return to your routine quickly.",
   },
   {
     question: "Do you offer personalized treatment plans?",
