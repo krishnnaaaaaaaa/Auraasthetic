@@ -66,7 +66,7 @@ const Navbar = () => {
   <button
     onMouseEnter={() => setIsHovered(true)}
     onMouseLeave={() => setIsHovered(false)}
-    className="sm:hidden mt-2 bg-lime-200 px-3 py-1.5 rounded-full text-black font-semibold text-sm flex items-center gap-1 max-w-[90%] whitespace-nowrap overflow-hidden"
+    className="sm:hidden mt-2 bg-[#C2EA66] hover:bg-[#a8d147] px-3 py-1.5 rounded-full text-black font-semibold text-sm flex items-center gap-1 max-w-[90%] whitespace-nowrap overflow-hidden transition-colors duration-200"
   >
   {/* Left arrow - only visible when hovered */}
   <AnimatePresence>
@@ -129,8 +129,8 @@ const Navbar = () => {
             <button
               onMouseEnter={() => setIsHovered(true)}
               onMouseLeave={() => setIsHovered(false)}
-              className="bg-[#C2EA66] px-5 py-2 rounded-full text-black 
-              font-semibold flex items-center gap-2 mr-12"
+              className="bg-[#C2EA66] hover:bg-[#a8d147] px-5 py-2 rounded-full text-black 
+              font-semibold flex items-center gap-2 mr-12 transition-colors duration-200"
             >
             <span className="relative w-4 h-4 inline-block">
               <AnimatePresence>
