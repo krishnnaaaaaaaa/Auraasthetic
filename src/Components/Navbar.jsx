@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import logo from '../assets/logo.png';
+import logo from '../assets/Aura Aesthetic logo.svg';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { FiArrowRight } from "react-icons/fi";
@@ -25,7 +25,7 @@ const Navbar = () => {
           <img
             src={logo}
             alt="Logo"
-            className="w-10 sm:w-12 md:w-16 lg:w-18 xl:w-20 hover:scale-105 transition-transform duration-200"
+            className="h-8 sm:h-10 md:h-12 lg:h-14 w-auto hover:scale-105 transition-all duration-200"
           />
         </Link>
 

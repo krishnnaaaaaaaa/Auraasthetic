@@ -4,7 +4,7 @@ import instagram from '../assets/instaicon.svg';
 import gmail from "../assets/gmailicon.svg";
 import telephone from "../assets/telephone.png";
 import location from "../assets/location.png";
-import logo from '../assets/logo.png';
+import logo from '../assets/Aura Aesthetic logo.svg';
 import { motion } from "framer-motion";
 function Footer() {
   const socialLinks = [
@@ -15,7 +15,7 @@ function Footer() {
     <div className="flex flex-wrap justify-between gap-8 px-8 py-12 bg-white">
       {/* Branding Section */}
       <div className="flex flex-col min-w-[200px] gap-2">
-        <img src={logo} alt="AURA Logo" className="w-16 h-auto mb-2" />
+        <img src={logo} alt="AURA Logo" className="h-10 sm:h-12 md:h-14 w-auto mb-2 transition-all duration-200" />
         <h3 className="text-gray-600 font-medium text-base max-w-md">
           Stay up to date on the latest features and releases by joining our socials
         </h3>
