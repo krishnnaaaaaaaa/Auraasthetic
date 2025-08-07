@@ -20,7 +20,7 @@ const faqData = [
   },
   {
     question: "Will I get hands-on training during the course?",
-    answer: "For every processor complete hands on trainings Given.",
+    answer: "For every procedure complete hands-on training is given.",
   },
   {
     question: "Do you provide post-course support or guidance?",
